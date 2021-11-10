@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="8dp"
+    app:elevation="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/img_pet_photo"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/tuna"
+            app:riv_corner_radius="10dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_fish_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Tuna"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_fish_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Rp 40.000"
+                android:textColor="@color/secondaryColor"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terjual"
+                    android:layout_marginEnd="5dp"
+                    android:textColor="@color/md_grey_700"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tv_fish_sold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="40"
+                    android:textColor="@color/secondaryColor"
+                    android:textSize="16sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -4,28 +4,255 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/primaryColor"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="e-Kan"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toStartOf="@+id/btn_search"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/btn_notif"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_notif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
         android:background="@null"
         android:src="@drawable/ic_notification"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
+        android:id="@+id/btn_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
         android:background="@null"
         android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/home_bg"
+        android:backgroundTint="@color/md_grey_100"
+        android:orientation="vertical"
+        android:padding="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Menu"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="18sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/ll_product"
+                            android:layout_width="140dp"
+                            android:layout_height="80dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/menu_box"
+                            android:backgroundTint="@color/md_blue_100"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/menu_box"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_fish"
+                                    app:tint="@color/md_blue_900" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Produk"
+                                android:textColor="@color/md_blue_900"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_history"
+                            android:layout_width="140dp"
+                            android:layout_height="80dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/menu_box"
+                            android:backgroundTint="@color/md_teal_100"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/menu_box"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_history"
+                                    app:tint="@color/md_teal_900" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="63dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Riwayat\nPesanan"
+                                android:textColor="@color/md_teal_900"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_setting"
+                            android:layout_width="140dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/menu_box"
+                            android:backgroundTint="@color/md_blue_grey_100"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/menu_box"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:padding="10dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_setting"
+                                    app:tint="@color/md_blue_grey_900" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Setting"
+                                android:textColor="@color/md_blue_grey_900"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Grafik Penjualan"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="18sp" />
+
+                <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:justifyContent="center"> <!-- this attribute is from the underlying FlexboxLayout -->
+
+                    <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+                        android:id="@+id/btn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        app:toggle_backgroundColor="@color/primaryLightColor"
+                        app:toggle_selectedBackgroundColor="@color/primaryColor"
+                        app:toggle_text="1 Bulan terakhir"
+                        app:toggle_textColor="@color/white" />
+
+                    <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+                        android:id="@+id/btn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        app:toggle_backgroundColor="@color/primaryLightColor"
+                        app:toggle_selectedBackgroundColor="@color/primaryColor"
+                        app:toggle_text="1 Tahun terakhir"
+                        app:toggle_textColor="@color/white" />
+
+                </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="5 Produk Terlaris"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="18sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_top5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:paddingHorizontal="16dp"
+                    tools:listitem="@layout/item_top_five" />
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
