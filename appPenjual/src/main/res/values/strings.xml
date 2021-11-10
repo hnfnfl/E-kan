@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">E-kan</string>
+    <string name="login_title">Masuk ke akun kamu</string>
+    <string name="email">Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="login">Masuk</string>
+    <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="register">Daftar</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="register_title">Buat akun baru</string>
+    <string name="name">Nama</string>
+    <string name="address">Alamat</string>
+    <string name="phone">No HP</string>
+    <string name="resend_code">Kirim ulang kode</string>
+    <string name="otp_desc">Masukkan 4 digit kode yang dikirimkan ke email kamu</string>
+    <string name="otp_title">Kode verifikasi telah dikirim!</string>
+</resources>

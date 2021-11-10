@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingHorizontal="32dp"
+    tools:context=".auth.register.OTPActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/otp_title"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/otp_desc"
+        android:textColor="@color/md_grey_600"
+        android:textSize="16sp" />
+
+    <in.aabhasjindal.otptextview.OtpTextView
+        android:id="@+id/otp_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/primaryColor"
+        app:bar_active_color="@color/secondaryColor"
+        app:bar_enabled="true"
+        app:bar_error_color="@color/md_red_A700"
+        app:bar_height="2dp"
+        app:bar_success_color="@color/md_green_A700"
+        app:height="40dp"
+        app:length="4"
+        app:otp_text_size="32dp"
+        app:width="50dp" />
+
+    <TextView
+        android:id="@+id/resend_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="64dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/resend_code"
+        android:textColor="@color/primaryColor"
+        android:textSize="16sp" />
+</LinearLayout>
