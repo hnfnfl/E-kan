@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/appAdmin" />
             <option value="$PROJECT_DIR$/appPenjual" />
+            <option value="$PROJECT_DIR$/appUser" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

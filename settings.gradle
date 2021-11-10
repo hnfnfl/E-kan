@@ -1,3 +1,4 @@
 rootProject.name = "E-kan"
 include ':appPenjual'
 include ':appAdmin'
+include ':appUser'
