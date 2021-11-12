@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "326934013284",
+    "project_id": "e-kan-a2882",
+    "storage_bucket": "e-kan-a2882.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326934013284:android:88922e98cac2559bae8671",
+        "android_client_info": {
+          "package_name": "com.example.e_kan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326934013284-4be50uklfujjvf09s25rr8c6f0u1shnf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf9s8JfeCFyfq9pQmvMfP8G0pHYQvuzm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326934013284-4be50uklfujjvf09s25rr8c6f0u1shnf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

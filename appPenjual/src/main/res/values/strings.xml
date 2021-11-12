@@ -14,4 +14,7 @@
     <string name="resend_code">Kirim ulang kode</string>
     <string name="otp_desc">Masukkan 4 digit kode yang dikirimkan ke email kamu</string>
     <string name="otp_title">Kode verifikasi telah dikirim!</string>
+    <string name="email_pass_not_match">Maaf Email / Kata Sandi Anda Salah</string>
+    <string name="email_not_registered">Maaf Email Anda Belum Terdaftar</string>
+    <string name="try_again">Silahkan Coba Lagi</string>
 </resources>
