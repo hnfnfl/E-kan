@@ -28,6 +28,8 @@ interface AuthService {
     @POST("auth_penjual/register")
     fun register(
         @Field("nama") nama: String,
+        @Field("nama_toko") nama_toko: String,
+        @Field("alamat") alamat: String,
         @Field("email") email: String,
         @Field("nohp") nohp: String,
         @Field("password") password: String,

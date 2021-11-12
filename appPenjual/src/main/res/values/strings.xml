@@ -17,4 +17,6 @@
     <string name="email_pass_not_match">Maaf Email / Kata Sandi Anda Salah</string>
     <string name="email_not_registered">Maaf Email Anda Belum Terdaftar</string>
     <string name="try_again">Silahkan Coba Lagi</string>
+    <string name="otp_not_match">Kode OTP tidak cocok</string>
+    <string name="shop_name">Nama Toko</string>
 </resources>

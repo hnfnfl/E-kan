@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.e_kan.MainActivity
-import com.example.e_kan.R
+import com.example.e_kan.R.*
 import com.example.e_kan.auth.register.RegisterActivity
 import com.example.e_kan.databinding.ActivityLoginBinding
 import com.example.e_kan.retrofit.AuthService
@@ -27,6 +27,13 @@ class LoginActivity : AppCompatActivity() {
         loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(loginBinding.root)
         myPreferences = MySharedPreferences(this@LoginActivity)
+
+        //Ketika user sudah login tidak perlu ke halaman login lagi
+        if (myPreferences.getValue(Constants.USER).equals(Constants.LOGIN)) {
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            finish()
+            return
+        }
 
         loginBinding.register.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
@@ -71,6 +78,8 @@ class LoginActivity : AppCompatActivity() {
                             myPreferences.setValue(Constants.USER, Constants.LOGIN)
                             myPreferences.setValue(Constants.USER_ID, response.body()!!.data[0].idpenjual)
                             myPreferences.setValue(Constants.USER_NAMA, response.body()!!.data[0].email_penjual)
+                            myPreferences.setValue(Constants.USER_NAMA_TOKO, response.body()!!.data[0].nama_toko)
+                            myPreferences.setValue(Constants.USER_ALAMAT, response.body()!!.data[0].alamat_penjual)
                             myPreferences.setValue(Constants.USER_EMAIL, response.body()!!.data[0].email_penjual)
                             myPreferences.setValue(Constants.USER_NOHP, response.body()!!.data[0].nohp_penjual)
                             myPreferences.setValue(Constants.DEVICE_TOKEN, response.body()!!.data[0].device_token)
@@ -80,11 +89,11 @@ class LoginActivity : AppCompatActivity() {
                         }
                         "failed" -> {
                             loginBinding.btnLogin.endAnimation()
-                            Toasty.error(this@LoginActivity, R.string.email_pass_not_match, Toasty.LENGTH_LONG).show()
+                            Toasty.error(this@LoginActivity, string.email_pass_not_match, Toasty.LENGTH_LONG).show()
                         }
                         "not_exist" -> {
                             loginBinding.btnLogin.endAnimation()
-                            Toasty.error(this@LoginActivity, R.string.email_not_registered, Toasty.LENGTH_LONG).show()
+                            Toasty.error(this@LoginActivity, string.email_not_registered, Toasty.LENGTH_LONG).show()
                         }
                     }
                 }
@@ -92,7 +101,7 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 loginBinding.btnLogin.endAnimation()
-                Toasty.error(this@LoginActivity, R.string.try_again, Toasty.LENGTH_LONG).show()
+                Toasty.error(this@LoginActivity, string.try_again, Toasty.LENGTH_LONG).show()
             }
 
         })
