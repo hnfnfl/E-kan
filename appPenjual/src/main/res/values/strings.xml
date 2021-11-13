@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">E-kan</string>
+    <string name="app_name">E-kan Penjual</string>
     <string name="login_title">Masuk ke akun kamu</string>
     <string name="email">Email</string>
     <string name="password">Kata Sandi</string>
@@ -19,4 +19,18 @@
     <string name="try_again">Silahkan Coba Lagi</string>
     <string name="otp_not_match">Kode OTP tidak cocok</string>
     <string name="shop_name">Nama Toko</string>
+    <string name="add_product">Tambah Produk</string>
+    <string name="brand">e-Kan</string>
+    <string name="menu">Menu</string>
+    <string name="product">Produk</string>
+    <string name="order_history">Riwayat\nPesanan</string>
+    <string name="settings">Setting</string>
+    <string name="time_chart">Grafik Penjualan</string>
+    <string name="top_5_products">5 Produk Terlaris</string>
+    <string name="change_photo">ganti foto</string>
+    <string name="product_name">Nama Produk</string>
+    <string name="product_desc">Deskripsi Produk</string>
+    <string name="product_price">Harga Produk (Rp)</string>
+    <string name="product_weight">Berat Produk (Kg)</string>
+    <string name="product_qty">Jumlah Stok</string>
 </resources>

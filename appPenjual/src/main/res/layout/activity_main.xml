@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="e-Kan"
+        android:text="@string/brand"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:background="@null"
-        android:src="@drawable/ic_search"
+        android:src="@drawable/ic_profile"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +48,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="80dp"
         android:background="@drawable/home_bg"
-        android:backgroundTint="@color/md_grey_100"
+        android:backgroundTint="@color/primaryBackgroundColor"
         android:orientation="vertical"
         android:padding="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Menu"
+                    android:text="@string/menu"
                     android:textColor="@color/primaryColor"
                     android:textSize="18sp" />
 
@@ -113,7 +113,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-medium"
-                                android:text="Produk"
+                                android:text="@string/product"
                                 android:textColor="@color/md_blue_900"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -148,7 +148,7 @@
                                 android:layout_width="63dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-medium"
-                                android:text="Riwayat\nPesanan"
+                                android:text="@string/order_history"
                                 android:textColor="@color/md_teal_900"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -182,7 +182,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-medium"
-                                android:text="Setting"
+                                android:text="@string/settings"
                                 android:textColor="@color/md_blue_grey_900"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -196,7 +196,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Grafik Penjualan"
+                    android:text="@string/time_chart"
                     android:textColor="@color/primaryColor"
                     android:textSize="18sp" />
 
@@ -238,7 +238,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="5 Produk Terlaris"
+                    android:text="@string/top_5_products"
                     android:textColor="@color/primaryColor"
                     android:textSize="18sp" />
 
@@ -248,7 +248,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:paddingHorizontal="16dp"
-                    tools:listitem="@layout/item_top_five" />
+                    tools:listitem="@layout/item_product" />
             </LinearLayout>
 
         </ScrollView>

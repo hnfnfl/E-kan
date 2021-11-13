@@ -36,7 +36,8 @@ class OTPActivity : AppCompatActivity() {
         setContentView(otpBinding.root)
 
         otpBinding.resendCode.setOnClickListener {
-            Toast.makeText(this@OTPActivity, "Kode sudah dikirim ulang ke email anda!", Toast.LENGTH_SHORT).show()
+            val email = intent.getStringExtra(email).toString()
+            requestOtp(email)
         }
 
         val otpTextView = otpBinding.otpView
@@ -104,6 +105,24 @@ class OTPActivity : AppCompatActivity() {
             override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
                 Toasty.error(this@OTPActivity, string.try_again, Toasty.LENGTH_LONG).show()
             }
+        })
+    }
+
+    private fun requestOtp(email: String) {
+        val service = RetrofitClient().apiRequest().create(AuthService::class.java)
+        service.requestOtp(email).enqueue(object : Callback<DefaultResponse> {
+            override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
+                if (response.isSuccessful) {
+                    if (response.body()!!.status == "success") {
+                        Toast.makeText(this@OTPActivity, "Kode sudah dikirim ulang ke email anda!", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                Toasty.error(this@OTPActivity, string.try_again, Toasty.LENGTH_LONG).show()
+            }
+
         })
     }
 }
