@@ -15,7 +15,7 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toStartOf="@+id/btn_search"
+        app:layout_constraintEnd_toStartOf="@+id/btn_profile"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/btn_notif"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btn_search"
+        android:id="@+id/btn_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
@@ -46,7 +46,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/home_bg"
         android:backgroundTint="@color/primaryBackgroundColor"
         android:orientation="vertical"
@@ -119,7 +119,7 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/ll_history"
+                            android:id="@+id/ll_order_history"
                             android:layout_width="140dp"
                             android:layout_height="80dp"
                             android:layout_marginEnd="20dp"
@@ -148,7 +148,7 @@
                                 android:layout_width="63dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="sans-serif-medium"
-                                android:text="@string/order_history"
+                                android:text="@string/order_list"
                                 android:textColor="@color/md_teal_900"
                                 android:textSize="16sp" />
                         </LinearLayout>

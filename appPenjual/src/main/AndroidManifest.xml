@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ekan">
+        <activity android:name=".settings.profile.ProfileActivity"></activity>
+        <activity android:name=".orderList.OrderListActivity" />
         <activity android:name=".product.AddProductActivity" />
         <activity android:name=".product.ListProductActivity" />
         <activity android:name=".auth.register.OTPActivity" />

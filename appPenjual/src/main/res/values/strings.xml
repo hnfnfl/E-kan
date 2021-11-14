@@ -23,7 +23,6 @@
     <string name="brand">e-Kan</string>
     <string name="menu">Menu</string>
     <string name="product">Produk</string>
-    <string name="order_history">Riwayat\nPesanan</string>
     <string name="settings">Setting</string>
     <string name="time_chart">Grafik Penjualan</string>
     <string name="top_5_products">5 Produk Terlaris</string>
@@ -33,4 +32,8 @@
     <string name="product_price">Harga Produk (Rp)</string>
     <string name="product_weight">Berat Produk (Kg)</string>
     <string name="product_qty">Jumlah Stok</string>
+    <string name="order_list">Daftar Pesanan</string>
+    <string name="profile">Profil</string>
+    <string name="edit_profile">Edit Profil</string>
+    <string name="save">Simpan</string>
 </resources>
