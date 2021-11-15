@@ -77,7 +77,7 @@ class LoginActivity : AppCompatActivity() {
                         "success" -> {
                             myPreferences.setValue(Constants.USER, Constants.LOGIN)
                             myPreferences.setValue(Constants.USER_ID, response.body()!!.data[0].idpenjual)
-                            myPreferences.setValue(Constants.USER_NAMA, response.body()!!.data[0].email_penjual)
+                            myPreferences.setValue(Constants.USER_NAMA, response.body()!!.data[0].nama_penjual)
                             myPreferences.setValue(Constants.USER_NAMA_TOKO, response.body()!!.data[0].nama_toko)
                             myPreferences.setValue(Constants.USER_ALAMAT, response.body()!!.data[0].alamat_penjual)
                             myPreferences.setValue(Constants.USER_EMAIL, response.body()!!.data[0].email_penjual)

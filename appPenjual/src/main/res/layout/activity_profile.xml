@@ -144,6 +144,49 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:id="@+id/tv_upload_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Unggah Foto Profil"
+                android:textColor="@color/md_grey_700"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_value_nohp_edit" />
+
+            <LinearLayout
+                android:id="@+id/layout_pic_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_upload_image">
+
+                <ImageView
+                    android:id="@+id/img_user"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_pict_image" />
+
+                <Button
+                    android:id="@+id/btn_choose_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:paddingHorizontal="36dp"
+                    android:text="Pilih"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/secondaryLightColor"
+                    app:cornerRadius="5dp" />
+
+            </LinearLayout>
+
             <com.chand.progressbutton.ProgressButton
                 android:id="@+id/btn_save"
                 android:layout_width="match_parent"

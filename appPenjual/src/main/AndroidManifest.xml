@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.e_kan">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ekan">
-        <activity android:name=".settings.profile.ProfileActivity"></activity>
+        <activity android:name=".notification.NotificationActivity"></activity>
+        <activity android:name=".settings.SettingActivity" />
+        <activity android:name=".settings.profile.ProfileActivity" />
         <activity android:name=".orderList.OrderListActivity" />
         <activity android:name=".product.AddProductActivity" />
         <activity android:name=".product.ListProductActivity" />

@@ -36,4 +36,11 @@
     <string name="profile">Profil</string>
     <string name="edit_profile">Edit Profil</string>
     <string name="save">Simpan</string>
+    <string name="privacy_policy">Kebijakan Privasi</string>
+    <string name="terms_condition">Ketentuan Layanan</string>
+    <string name="logout">Logout</string>
+    <string name="notification">Notifikasi</string>
+    <string name="confirm_logout">Apakah Anda Yakin Ingin Keluar?</string>
+    <string name="no">Tidak</string>
+    <string name="yes">Ya</string>
 </resources>

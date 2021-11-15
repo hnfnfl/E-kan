@@ -10,7 +10,6 @@ object Constants {
     const val USER_ALAMAT = "alamat_user"
     const val USER_EMAIL = "email_user"
     const val USER_NOHP = "nohp_user"
-    const val USER_POIN = "poin_user"
     const val DEVICE_TOKEN = "device_token"
     const val USER_FOTO = "user_foto"
 }

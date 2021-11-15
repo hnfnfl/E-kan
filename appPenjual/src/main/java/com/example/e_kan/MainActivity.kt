@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.e_kan.databinding.ActivityMainBinding
+import com.example.e_kan.notification.NotificationActivity
 import com.example.e_kan.orderList.OrderListActivity
 import com.example.e_kan.product.ListProductActivity
+import com.example.e_kan.settings.SettingActivity
 import com.example.e_kan.settings.profile.ProfileActivity
 
 class MainActivity : AppCompatActivity() {
@@ -19,16 +21,22 @@ class MainActivity : AppCompatActivity() {
 
         mainBinding.llProduct.setOnClickListener {
             startActivity(Intent(this@MainActivity, ListProductActivity::class.java))
-            finish()
         }
 
         mainBinding.llOrderHistory.setOnClickListener {
             startActivity(Intent(this@MainActivity, OrderListActivity::class.java))
         }
 
+        mainBinding.llSetting.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SettingActivity::class.java))
+        }
+
         mainBinding.btnProfile.setOnClickListener {
             startActivity(Intent(this@MainActivity, ProfileActivity::class.java))
-            finish()
+        }
+
+        mainBinding.btnNotif.setOnClickListener {
+            startActivity(Intent(this@MainActivity, NotificationActivity::class.java))
         }
     }
 }
