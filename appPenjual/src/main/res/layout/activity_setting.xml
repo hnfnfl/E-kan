@@ -48,6 +48,7 @@
             android:background="@drawable/bg_list_product"
             android:clickable="true"
             android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:padding="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_header">
@@ -93,6 +94,7 @@
             android:background="@drawable/bg_list_product"
             android:clickable="true"
             android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:padding="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_edit_profile">
@@ -137,6 +139,7 @@
             android:background="@drawable/bg_list_product"
             android:clickable="true"
             android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:padding="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_privacy_policy">
@@ -181,6 +184,7 @@
             android:background="@drawable/bg_list_product"
             android:clickable="true"
             android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:padding="18dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_terms_condition">

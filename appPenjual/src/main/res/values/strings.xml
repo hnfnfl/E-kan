@@ -43,4 +43,6 @@
     <string name="confirm_logout">Apakah Anda Yakin Ingin Keluar?</string>
     <string name="no">Tidak</string>
     <string name="yes">Ya</string>
+    <string name="fish_weight">%1$s Kg</string>
+
 </resources>

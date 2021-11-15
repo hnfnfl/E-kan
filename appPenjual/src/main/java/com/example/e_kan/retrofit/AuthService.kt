@@ -53,7 +53,7 @@ interface AuthService {
     @FormUrlEncoded
     @POST("auth_penjual/addToken")
     fun addToken(
-        @Field("iduser") iduser: String,
+        @Field("idpenjual") idpenjual: String,
         @Field("device_token") device_token: String,
     ): Call<DefaultResponse>
 
@@ -61,7 +61,7 @@ interface AuthService {
     @FormUrlEncoded
     @POST("auth_penjual/refreshToken")
     fun refreshAuthToken(
-        @Field("iduser") iduser: String
+        @Field("idpenjual") idpenjual: String
     ): Call<LoginResponse>
 
     //change password

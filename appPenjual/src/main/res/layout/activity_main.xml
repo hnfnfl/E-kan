@@ -42,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <ScrollView
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -51,208 +51,204 @@
         android:backgroundTint="@color/primaryBackgroundColor"
         android:orientation="vertical"
         android:padding="18dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="none">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/menu"
+                android:textColor="@color/primaryColor"
+                android:textSize="18sp" />
+
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:scrollbars="none">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/menu"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="18sp" />
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="none">
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="8dp"
+                        android:id="@+id/ll_product"
+                        android:layout_width="140dp"
+                        android:layout_height="80dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/menu_box"
+                        android:backgroundTint="@color/md_blue_100"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
                         android:orientation="horizontal">
 
                         <LinearLayout
-                            android:id="@+id/ll_product"
-                            android:layout_width="140dp"
-                            android:layout_height="80dp"
-                            android:layout_marginEnd="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
                             android:background="@drawable/menu_box"
-                            android:backgroundTint="@color/md_blue_100"
                             android:gravity="center"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:padding="10dp">
 
-                            <LinearLayout
+                            <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/menu_box"
-                                android:gravity="center"
-                                android:orientation="horizontal"
-                                android:padding="10dp">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_fish"
-                                    app:tint="@color/md_blue_900" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="sans-serif-medium"
-                                android:text="@string/product"
-                                android:textColor="@color/md_blue_900"
-                                android:textSize="16sp" />
+                                android:src="@drawable/ic_fish"
+                                app:tint="@color/md_blue_900" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/ll_order_history"
-                            android:layout_width="140dp"
-                            android:layout_height="80dp"
-                            android:layout_marginEnd="20dp"
-                            android:background="@drawable/menu_box"
-                            android:backgroundTint="@color/md_teal_100"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/menu_box"
-                                android:gravity="center"
-                                android:orientation="horizontal"
-                                android:padding="10dp">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_history"
-                                    app:tint="@color/md_teal_900" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="63dp"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="sans-serif-medium"
-                                android:text="@string/order_list"
-                                android:textColor="@color/md_teal_900"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_setting"
-                            android:layout_width="140dp"
-                            android:layout_height="80dp"
-                            android:background="@drawable/menu_box"
-                            android:backgroundTint="@color/md_blue_grey_100"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/menu_box"
-                                android:gravity="center"
-                                android:orientation="horizontal"
-                                android:padding="10dp">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/ic_setting"
-                                    app:tint="@color/md_blue_grey_900" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="sans-serif-medium"
-                                android:text="@string/settings"
-                                android:textColor="@color/md_blue_grey_900"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/product"
+                            android:textColor="@color/md_blue_900"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
-                </HorizontalScrollView>
+                    <LinearLayout
+                        android:id="@+id/ll_order_history"
+                        android:layout_width="140dp"
+                        android:layout_height="80dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/menu_box"
+                        android:backgroundTint="@color/md_teal_100"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
-                <TextView
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/menu_box"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_history"
+                                app:tint="@color/md_teal_900" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="63dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/order_list"
+                            android:textColor="@color/md_teal_900"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_setting"
+                        android:layout_width="140dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/menu_box"
+                        android:backgroundTint="@color/md_blue_grey_100"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/menu_box"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_setting"
+                                app:tint="@color/md_blue_grey_900" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/settings"
+                            android:textColor="@color/md_blue_grey_900"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/time_chart"
+                android:textColor="@color/primaryColor"
+                android:textSize="18sp" />
+
+            <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:justifyContent="center"> <!-- this attribute is from the underlying FlexboxLayout -->
+
+                <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+                    android:id="@+id/btn1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/time_chart"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="18sp" />
+                    android:layout_height="38dp"
+                    app:toggle_backgroundColor="@color/primaryLightColor"
+                    app:toggle_selectedBackgroundColor="@color/primaryColor"
+                    app:toggle_text="1 Bulan terakhir"
+                    app:toggle_textColor="@color/white" />
 
-                <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
-                    android:id="@+id/time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:justifyContent="center"> <!-- this attribute is from the underlying FlexboxLayout -->
-
-                    <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
-                        android:id="@+id/btn1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        app:toggle_backgroundColor="@color/primaryLightColor"
-                        app:toggle_selectedBackgroundColor="@color/primaryColor"
-                        app:toggle_text="1 Bulan terakhir"
-                        app:toggle_textColor="@color/white" />
-
-                    <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
-                        android:id="@+id/btn2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="38dp"
-                        app:toggle_backgroundColor="@color/primaryLightColor"
-                        app:toggle_selectedBackgroundColor="@color/primaryColor"
-                        app:toggle_text="1 Tahun terakhir"
-                        app:toggle_textColor="@color/white" />
-
-                </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
-
-                <com.github.mikephil.charting.charts.LineChart
-                    android:id="@+id/chart_weight"
-                    android:layout_width="match_parent"
-                    android:layout_height="350dp"
-                    android:layout_marginTop="8dp"/>
-
-                <TextView
+                <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+                    android:id="@+id/btn2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/top_5_products"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="18sp" />
+                    android:layout_height="38dp"
+                    app:toggle_backgroundColor="@color/primaryLightColor"
+                    app:toggle_selectedBackgroundColor="@color/primaryColor"
+                    app:toggle_text="1 Tahun terakhir"
+                    app:toggle_textColor="@color/white" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_top5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:paddingHorizontal="16dp"
-                    tools:listitem="@layout/item_product" />
-            </LinearLayout>
+            </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
 
-        </ScrollView>
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_weight"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_marginTop="8dp" />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/top_5_products"
+                android:textColor="@color/primaryColor"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_top_five"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginTop="12dp"
+                tools:listitem="@layout/item_product_top_five" />
+        </LinearLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.e_kan.R
 import com.example.e_kan.auth.login.LoginActivity
 import com.example.e_kan.databinding.ActivitySettingBinding
+import com.example.e_kan.settings.profile.ProfileActivity
 import com.example.e_kan.utils.Constants
 import com.example.e_kan.utils.MySharedPreferences
 import dev.shreyaspatil.MaterialDialog.MaterialDialog
@@ -21,6 +22,12 @@ class SettingActivity : AppCompatActivity() {
         setContentView(settingBinding.root)
 
         myPreferences = MySharedPreferences(this@SettingActivity)
+
+        settingBinding
+
+        settingBinding.btnEditProfile.setOnClickListener {
+            startActivity(Intent(this@SettingActivity, ProfileActivity::class.java))
+        }
 
         settingBinding.btnLogout.setOnClickListener {
             val mDialog = MaterialDialog.Builder(this@SettingActivity)
