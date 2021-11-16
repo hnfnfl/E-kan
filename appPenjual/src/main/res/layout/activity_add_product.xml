@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
     tools:context=".product.AddProductActivity">
 
         <LinearLayout
@@ -27,7 +28,7 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@drawable/tuna"
+                android:src="@drawable/ic_fish"
                 app:riv_corner_radius="15dp" />
 
             <TextView

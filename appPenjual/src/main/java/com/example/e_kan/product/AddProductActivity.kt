@@ -2,6 +2,7 @@ package com.example.e_kan.product
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import com.example.e_kan.databinding.ActivityAddProductBinding
 

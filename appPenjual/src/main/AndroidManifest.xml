@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ekan">
-        <activity android:name=".notification.NotificationActivity"></activity>
+        <activity android:name=".product.EditProductActivity"></activity>
+        <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".settings.SettingActivity" />
         <activity android:name=".settings.profile.ProfileActivity" />
         <activity android:name=".orderList.OrderListActivity" />

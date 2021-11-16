@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.e_kan.R
 import com.example.e_kan.databinding.ItemProductBinding
 import java.text.DecimalFormat
@@ -21,7 +22,6 @@ class ListProductAdapter : RecyclerView.Adapter<ListProductAdapter.ProductItemHo
         if (listVendorItem == null) return
         this.listVendorItem.clear()
         this.listVendorItem.addAll(listVendorItem)
-
         this.listVendorItemFilter = listVendorItem as ArrayList<ProductEntity>
         notifyDataSetChanged()
     }
@@ -36,8 +36,22 @@ class ListProductAdapter : RecyclerView.Adapter<ListProductAdapter.ProductItemHo
                 tvFishStock.text = listProductItem.stok
                 tvFishSold.text = listProductItem.terjual
                 btnEditProduct.setOnClickListener {
-                    itemView.context.startActivity(Intent(itemView.context, AddProductActivity::class.java))
+                    val intent = Intent(itemView.context, AddProductActivity::class.java)
+                        .apply {
+                            putExtra(EditProductActivity.nama, listProductItem.nama_produk)
+                            putExtra(EditProductActivity.keterangan, listProductItem.keterangan)
+                            putExtra(EditProductActivity.harga, listProductItem.harga)
+                            putExtra(EditProductActivity.berat, listProductItem.berat)
+                            putExtra(EditProductActivity.stok, listProductItem.stok)
+                            putExtra(EditProductActivity.foto_path, listProductItem.foto_path)
+                        }
+                    itemView.context.startActivity(intent)
                 }
+                Glide.with(itemView.context)
+                    .load(listProductItem.foto_path)
+                    .placeholder(R.drawable.ic_fish)
+                    .error(R.drawable.ic_fish)
+                    .into(imgFish)
             }
         }
 

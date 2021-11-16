@@ -2,6 +2,7 @@ package com.example.e_kan.product
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -66,6 +67,7 @@ class ListProductActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ProductResponse>, response: Response<ProductResponse>) {
                 if (response.isSuccessful) {
                     if (response.body()!!.status == "success") {
+                        listProductBinding.loadingAnim.visibility = View.GONE
                         val listData = response.body()!!.data
                         listProductSearch = listData
                         listProductAdapter.setListVendorItem(listProductSearch)

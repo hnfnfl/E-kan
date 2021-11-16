@@ -3,6 +3,7 @@ package com.example.e_kan.product
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.e_kan.R
 import com.example.e_kan.databinding.ItemProductTopFiveBinding
 import java.text.DecimalFormat
@@ -18,20 +19,24 @@ class ListTopFiveProductAdapter : RecyclerView.Adapter<ListTopFiveProductAdapter
         if (listVendorItem == null) return
         this.listVendorItem.clear()
         this.listVendorItem.addAll(listVendorItem)
-
         this.listVendorItemFilter = listVendorItem as ArrayList<ProductEntity>
         notifyDataSetChanged()
     }
 
     class ProductItemHolder(private val binding: ItemProductTopFiveBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(productItem: ProductEntity) {
+        fun bind(productTopFiveItem: ProductEntity) {
             with(binding) {
-                tvFishName.text = productItem.nama_produk
+                tvFishName.text = productTopFiveItem.nama_produk
                 val numbering = DecimalFormat("#,###")
-                tvFishPrice.text = numbering.format(productItem.harga.toInt())
-                tvFishWeight.text = itemView.context.getString(R.string.fish_weight, productItem.berat)
-                tvFishStock.text = productItem.stok
-                tvFishSold.text = productItem.terjual
+                tvFishPrice.text = numbering.format(productTopFiveItem.harga.toInt())
+                tvFishWeight.text = itemView.context.getString(R.string.fish_weight, productTopFiveItem.berat)
+                tvFishStock.text = productTopFiveItem.stok
+                tvFishSold.text = productTopFiveItem.terjual
+                Glide.with(itemView.context)
+                    .load(productTopFiveItem.foto_path)
+                    .placeholder(R.drawable.ic_fish)
+                    .error(R.drawable.ic_fish)
+                    .into(imgFish)
             }
         }
 
