@@ -43,7 +43,6 @@ class ListProductActivity : AppCompatActivity() {
 
         listProductBinding.btnAddProduct.setOnClickListener {
             startActivity(Intent(this@ListProductActivity, AddProductActivity::class.java))
-            finish()
         }
 
         listProductBinding.svProduct.setOnQueryTextListener(object : SearchView.OnQueryTextListener {

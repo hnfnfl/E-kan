@@ -24,7 +24,7 @@
                 android:src="@drawable/ic_back" />
 
             <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/img_pet_photo"
+                android:id="@+id/img_fish"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
@@ -33,9 +33,12 @@
 
             <TextView
                 android:id="@+id/btn_change_img"
+                android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:textSize="18sp"
+                android:textColor="@color/secondaryLightColor"
                 android:text="@string/change_photo" />
 
             <com.google.android.material.textfield.TextInputLayout

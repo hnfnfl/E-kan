@@ -1,11 +1,11 @@
 package com.example.e_kan.retrofit
 
+import com.example.e_kan.retrofit.response.DefaultResponse
 import com.example.e_kan.retrofit.response.ProductResponse
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface DataService {
     //get data semua produk
@@ -24,4 +24,20 @@ interface DataService {
         @Header("Authorization") token: String
     ): Call<ProductResponse>
 
+
+
+    //edit data produk
+    @Multipart
+    @POST("main_penjual/editProduct")
+    fun editProduct(
+        @Part("idproduk") idproduk: RequestBody,
+        @Part("idpenjual") idpenjual: RequestBody,
+        @Part("nama_produk") nama_produk: RequestBody,
+        @Part("keterangan") keterangan: RequestBody,
+        @Part("harga") harga: RequestBody,
+        @Part("berat") berat: RequestBody,
+        @Part("stok") stok: RequestBody,
+        @Part filefoto: MultipartBody.Part? = null,
+        @Header("Authorization") token: String
+    ): Call<DefaultResponse>
 }

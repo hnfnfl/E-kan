@@ -1,5 +1,6 @@
 package com.example.e_kan.product
 
+import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -36,8 +37,9 @@ class ListProductAdapter : RecyclerView.Adapter<ListProductAdapter.ProductItemHo
                 tvFishStock.text = listProductItem.stok
                 tvFishSold.text = listProductItem.terjual
                 btnEditProduct.setOnClickListener {
-                    val intent = Intent(itemView.context, AddProductActivity::class.java)
+                    val intent = Intent(itemView.context, EditProductActivity::class.java)
                         .apply {
+                            putExtra(EditProductActivity.idproduk, listProductItem.idproduk)
                             putExtra(EditProductActivity.nama, listProductItem.nama_produk)
                             putExtra(EditProductActivity.keterangan, listProductItem.keterangan)
                             putExtra(EditProductActivity.harga, listProductItem.harga)
@@ -46,6 +48,7 @@ class ListProductAdapter : RecyclerView.Adapter<ListProductAdapter.ProductItemHo
                             putExtra(EditProductActivity.foto_path, listProductItem.foto_path)
                         }
                     itemView.context.startActivity(intent)
+                    (itemView.context as Activity).finish()
                 }
                 Glide.with(itemView.context)
                     .load(listProductItem.foto_path)
