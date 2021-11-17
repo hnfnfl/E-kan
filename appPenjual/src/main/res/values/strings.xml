@@ -44,5 +44,6 @@
     <string name="no">Tidak</string>
     <string name="yes">Ya</string>
     <string name="fish_weight">%1$s Kg</string>
+    <string name="confirm_delete">Apakah Anda yaking ingin menhapus produk ini?</string>
 
 </resources>

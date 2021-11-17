@@ -45,19 +45,35 @@
             android:layout_width="130dp"
             android:layout_height="130dp"
             android:layout_marginTop="16dp"
-            android:src="@drawable/tuna"
+            android:src="@drawable/ic_profile"
+            android:tint="@color/primaryColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_header"
             app:riv_corner_radius="10dp" />
 
+        <TextView
+            android:id="@+id/btn_change_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="@string/change_photo"
+            android:textColor="@color/secondaryLightColor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_profile" />
+
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_profile">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_change_img">
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -89,7 +105,7 @@
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/white"
                     android:hint="@string/shop_name"
-                    android:inputType="textPersonName" />
+                    android:inputType="text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,7 +151,7 @@
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tv_value_nohp_edit"
+                    android:id="@+id/tv_value_phone_edit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/white"
@@ -143,49 +159,6 @@
                     android:inputType="phone" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:id="@+id/tv_upload_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Unggah Foto Profil"
-                android:textColor="@color/md_grey_700"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_value_nohp_edit" />
-
-            <LinearLayout
-                android:id="@+id/layout_pic_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_upload_image">
-
-                <ImageView
-                    android:id="@+id/img_user"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginStart="8dp"
-                    android:src="@drawable/ic_pict_image" />
-
-                <Button
-                    android:id="@+id/btn_choose_photo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:paddingHorizontal="36dp"
-                    android:text="Pilih"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/secondaryLightColor"
-                    app:cornerRadius="5dp" />
-
-            </LinearLayout>
 
             <com.chand.progressbutton.ProgressButton
                 android:id="@+id/btn_save"

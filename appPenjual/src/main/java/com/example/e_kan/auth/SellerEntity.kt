@@ -9,4 +9,6 @@ class SellerEntity(
     var nohp_penjual: String = "",
     var rating: String = "",
     var device_token: String = "",
+    var foto_name: String = "",
+    var foto_path: String = "",
 )

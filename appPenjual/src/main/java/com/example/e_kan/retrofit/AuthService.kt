@@ -64,11 +64,10 @@ interface AuthService {
         @Field("idpenjual") idpenjual: String
     ): Call<LoginResponse>
 
-    //change password
+    //get Foto User
     @FormUrlEncoded
-    @POST("auth_penjual/editPass")
-    fun editPass(
-        @Field("iduser") iduser: String,
-        @Field("password") password: String
-    ): Call<DefaultResponse>
+    @POST("auth_penjual/getUserFoto")
+    fun getUserFoto(
+        @Field("idpenjual") idpenjual: String
+    ): Call<LoginResponse>
 }

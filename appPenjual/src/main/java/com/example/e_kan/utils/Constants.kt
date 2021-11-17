@@ -11,5 +11,6 @@ object Constants {
     const val USER_EMAIL = "email_user"
     const val USER_NOHP = "nohp_user"
     const val DEVICE_TOKEN = "device_token"
-    const val USER_FOTO = "user_foto"
+    const val FOTO_NAME = "foto_name"
+    const val FOTO_PATH = "foto_path"
 }

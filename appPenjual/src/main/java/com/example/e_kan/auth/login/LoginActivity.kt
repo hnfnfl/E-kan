@@ -83,6 +83,9 @@ class LoginActivity : AppCompatActivity() {
                             myPreferences.setValue(Constants.USER_EMAIL, response.body()!!.data[0].email_penjual)
                             myPreferences.setValue(Constants.USER_NOHP, response.body()!!.data[0].nohp_penjual)
                             myPreferences.setValue(Constants.DEVICE_TOKEN, response.body()!!.data[0].device_token)
+                            myPreferences.setValue(Constants.FOTO_NAME, response.body()!!.data[0].foto_name)
+                            myPreferences.setValue(Constants.FOTO_PATH, response.body()!!.data[0].foto_path)
+
                             myPreferences.setValue(Constants.TokenAuth, response.body()!!.tokenAuth)
                             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                             finish()

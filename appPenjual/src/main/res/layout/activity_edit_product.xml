@@ -54,7 +54,7 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/white"
                 android:hint="@string/product_name"
-                android:inputType="textEmailAddress" />
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,7 +71,7 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/white"
                 android:hint="@string/product_desc"
-                android:inputType="textEmailAddress" />
+                android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,7 +88,7 @@
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/white"
                 android:hint="@string/product_price"
-                android:inputType="textEmailAddress" />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,7 +113,7 @@
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/white"
                     android:hint="@string/product_weight"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -130,7 +130,7 @@
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/white"
                     android:hint="@string/product_qty"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -151,6 +151,24 @@
             app:p_rippleColor="@color/primaryLightColor"
             app:p_style="circleBar"
             app:p_text="Edit Produk"
+            app:p_textColor="@color/white"
+            app:p_textSize="18sp" />
+
+        <com.chand.progressbutton.ProgressButton
+            android:id="@+id/btn_delete_product"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            app:p_arrowVisible="false"
+            app:p_backgroundTint="@color/md_red_700"
+            app:p_bgColor="@color/colorSecondary"
+            app:p_cornerRadius="5dp"
+            app:p_layoutDirection="ltr"
+            app:p_progressBGColor="@color/secondaryLightColor"
+            app:p_progressColor="@color/secondaryDarkColor"
+            app:p_rippleColor="@color/md_red_400"
+            app:p_style="circleBar"
+            app:p_text="Hapus Produk"
             app:p_textColor="@color/white"
             app:p_textSize="18sp" />
 

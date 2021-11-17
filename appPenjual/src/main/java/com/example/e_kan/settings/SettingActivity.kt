@@ -23,10 +23,12 @@ class SettingActivity : AppCompatActivity() {
 
         myPreferences = MySharedPreferences(this@SettingActivity)
 
-        settingBinding
-
         settingBinding.btnEditProfile.setOnClickListener {
             startActivity(Intent(this@SettingActivity, ProfileActivity::class.java))
+        }
+
+        settingBinding.btnBack.setOnClickListener {
+            onBackPressed()
         }
 
         settingBinding.btnLogout.setOnClickListener {
@@ -50,7 +52,8 @@ class SettingActivity : AppCompatActivity() {
                     myPreferences.setValue(Constants.USER_EMAIL, "")
                     myPreferences.setValue(Constants.USER_NOHP, "")
                     myPreferences.setValue(Constants.DEVICE_TOKEN, "")
-                    myPreferences.setValue(Constants.USER_FOTO, "")
+                    myPreferences.setValue(Constants.FOTO_NAME, "")
+                    myPreferences.setValue(Constants.FOTO_PATH, "")
 
                     startActivity(Intent(this@SettingActivity, LoginActivity::class.java))
                     finish()
