@@ -1,9 +1,11 @@
 package com.example.e_kan.orderList
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_kan.R
 import com.example.e_kan.databinding.ActivityOrderDetailBinding
 
 class OrderDetailActivity : AppCompatActivity() {
@@ -17,6 +19,8 @@ class OrderDetailActivity : AppCompatActivity() {
         const val namaPemesan = "namaPemesan"
         const val tgl = "tgl"
         const val catatan = "catatan"
+        const val alamat = "alamat"
+        const val status = "status"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,13 +32,34 @@ class OrderDetailActivity : AppCompatActivity() {
         val namaPemesan = intent.getStringExtra(namaPemesan)
         val tgl = intent.getStringExtra(tgl)
         val catatan = intent.getStringExtra(catatan)
+        val alamat = intent.getStringExtra(alamat)
+        val status = intent.getStringExtra(status)
 
+        orderDetailBinding.btnBack.setOnClickListener {
+            onBackPressed()
+            finish()
+        }
+
+        orderDetailBinding.btnConfirm.setOnClickListener {
+            orderDetailBinding.btnConfirm.startAnimation()
+        }
+
+        orderDetailBinding.btnStockEmpty.setOnClickListener {
+            orderDetailBinding.btnStockEmpty.startAnimation()
+        }
+
+        orderListItemAdapter = OrderListItemAdapter()
         orderDetailBinding.tvKodePesanan.text = kodePesanan.toString()
         orderDetailBinding.tvDate.text = tgl.toString()
         orderDetailBinding.tvUserName.text = namaPemesan.toString()
         orderDetailBinding.tvNote.text = catatan.toString()
+        orderDetailBinding.tvDetailAddress.text = alamat.toString()
+        if (status == getString(R.string.unprocessed)){
+            orderDetailBinding.btnConfirm.visibility = View.VISIBLE
+            orderDetailBinding.btnStockEmpty.visibility = View.VISIBLE
+        }
 
-        val list = intent.getSerializableExtra("pesanan") as ArrayList<OrderItemEntity>
+        val list = intent.getParcelableArrayListExtra<OrderItemEntity>("pesanan") as ArrayList<OrderItemEntity>
         itemList = list
         orderListItemAdapter.setOrderItem(itemList)
         orderListItemAdapter.notifyDataSetChanged()

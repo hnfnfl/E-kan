@@ -1,13 +1,11 @@
 package com.example.e_kan.orderList
 
 import android.content.Intent
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.e_kan.R
 import com.example.e_kan.databinding.ItemOrderListBinding
-import java.util.*
-import kotlin.collections.ArrayList
 
 
 class OrderListAdapter : RecyclerView.Adapter<OrderListAdapter.ProductItemHolder>() {
@@ -23,14 +21,28 @@ class OrderListAdapter : RecyclerView.Adapter<OrderListAdapter.ProductItemHolder
 
     class ProductItemHolder(private val binding: ItemOrderListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(orderList: OrderEntity) {
-            val bundle = Bundle()
-            bundle.putSerializable("pesanan", orderList.pesanan)
 
             with(binding) {
                 tvUserName.text = orderList.nama
                 tvOrderTime.text = orderList.timestamp
                 tvOrderId.text = orderList.kode_pesanan
                 tvOrderQty.text = orderList.pesanan.size.toString()
+                val status = orderList.status
+                tvStatus.text = status
+                when (status) {
+                    itemView.context.getString(R.string.unprocessed) -> {
+                        tvStatus.setTextColor(itemView.resources.getColor(R.color.md_red_400))
+                    }
+                    itemView.context.getString(R.string.processed) -> {
+                        tvStatus.setTextColor(itemView.resources.getColor(R.color.md_indigo_400))
+                    }
+                    itemView.context.getString(R.string.sent) -> {
+                        tvStatus.setTextColor(itemView.resources.getColor(R.color.md_blue_400))
+                    }
+                    itemView.context.getString(R.string.done) -> {
+                        tvStatus.setTextColor(itemView.resources.getColor(R.color.md_green_400))
+                    }
+                }
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, OrderDetailActivity::class.java)
                         .apply {
@@ -38,6 +50,8 @@ class OrderListAdapter : RecyclerView.Adapter<OrderListAdapter.ProductItemHolder
                             putExtra(OrderDetailActivity.namaPemesan, orderList.nama)
                             putExtra(OrderDetailActivity.tgl, orderList.timestamp)
                             putExtra(OrderDetailActivity.catatan, orderList.catatan)
+                            putExtra(OrderDetailActivity.alamat, orderList.alamat_antar)
+                            putExtra(OrderDetailActivity.status, orderList.status)
                         }
                     intent.putExtra("pesanan", orderList.pesanan)
                     itemView.context.startActivity(intent)

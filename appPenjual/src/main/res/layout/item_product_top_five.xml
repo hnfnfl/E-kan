@@ -102,7 +102,6 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="12dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -118,13 +117,20 @@
                         android:id="@+id/tv_fish_stock"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
                         android:text="15"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         tools:ignore="HardcodedText" />
 
                 </LinearLayout>
+
+                <ImageView
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="8dp"
+                    android:backgroundTint="@color/md_amber_300"
+                    android:src="@drawable/ic_dot" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"

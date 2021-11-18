@@ -45,5 +45,11 @@
     <string name="yes">Ya</string>
     <string name="fish_weight">%1$s Kg</string>
     <string name="confirm_delete">Apakah Anda yaking ingin menhapus produk ini?</string>
+    <string name="fish_detail_qty">x%1$s</string>
+    <string name="fish_detail_price">Rp %1$s</string>
+    <string name="unprocessed">belum diproses</string>
+    <string name="processed">diproses</string>
+    <string name="sent">dikirim</string>
+    <string name="done">selesai</string>
 
 </resources>
