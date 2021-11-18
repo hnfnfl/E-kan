@@ -7,6 +7,7 @@ import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_kan.MainActivity
 import com.example.e_kan.R
 import com.example.e_kan.databinding.ActivityListProductBinding
 import com.example.e_kan.retrofit.DataService
@@ -37,7 +38,7 @@ class ListProductActivity : AppCompatActivity() {
         val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
 
         listProductBinding.btnBack.setOnClickListener {
-            onBackPressed()
+            startActivity(Intent(this@ListProductActivity, MainActivity::class.java))
             finish()
         }
 
@@ -86,6 +87,5 @@ class ListProductActivity : AppCompatActivity() {
                 Toasty.error(this@ListProductActivity, R.string.try_again, Toasty.LENGTH_LONG).show()
             }
         })
-
     }
 }

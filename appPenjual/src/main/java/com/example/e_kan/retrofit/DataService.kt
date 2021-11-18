@@ -1,6 +1,7 @@
 package com.example.e_kan.retrofit
 
 import com.example.e_kan.retrofit.response.DefaultResponse
+import com.example.e_kan.retrofit.response.OrderResponse
 import com.example.e_kan.retrofit.response.ProductResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -74,4 +75,12 @@ interface DataService {
         @Field("idproduk") idproduk: String,
         @Header("Authorization") token: String
     ): Call<DefaultResponse>
+
+    //get daftar pesanan
+    @FormUrlEncoded
+    @POST("main_penjual/getOrder")
+    fun getOrder(
+        @Field("idpenjual") idpenjual: String,
+        @Header("Authorization") token: String
+    ): Call<OrderResponse>
 }

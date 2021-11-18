@@ -16,14 +16,14 @@ import kotlin.collections.ArrayList
 
 class ListProductAdapter : RecyclerView.Adapter<ListProductAdapter.ProductItemHolder>(), Filterable {
 
-    private var listVendorItem = ArrayList<ProductEntity>()
-    private var listVendorItemFilter = ArrayList<ProductEntity>()
+    private var listProduct = ArrayList<ProductEntity>()
+    private var listProductFilter = ArrayList<ProductEntity>()
 
     fun setListVendorItem(listVendorItem: List<ProductEntity>?) {
         if (listVendorItem == null) return
-        this.listVendorItem.clear()
-        this.listVendorItem.addAll(listVendorItem)
-        this.listVendorItemFilter = listVendorItem as ArrayList<ProductEntity>
+        this.listProduct.clear()
+        this.listProduct.addAll(listVendorItem)
+        this.listProductFilter = listVendorItem as ArrayList<ProductEntity>
         notifyDataSetChanged()
     }
 
@@ -66,12 +66,12 @@ class ListProductAdapter : RecyclerView.Adapter<ListProductAdapter.ProductItemHo
     }
 
     override fun onBindViewHolder(holder: ProductItemHolder, position: Int) {
-        val vendorItem = listVendorItem[position]
+        val vendorItem = listProduct[position]
         holder.bind(vendorItem)
     }
 
     override fun getItemCount(): Int {
-        return listVendorItem.size
+        return listProduct.size
     }
 
     override fun getFilter(): Filter {
@@ -81,14 +81,14 @@ class ListProductAdapter : RecyclerView.Adapter<ListProductAdapter.ProductItemHo
                 val filterResults = FilterResults()
 
                 if (constraint == null || constraint.length < 0) {
-                    filterResults.count = listVendorItemFilter.size
-                    filterResults.values = listVendorItemFilter
+                    filterResults.count = listProductFilter.size
+                    filterResults.values = listProductFilter
                 } else {
                     val charSearch = constraint.toString()
 
                     val resultList = ArrayList<ProductEntity>()
 
-                    for (row in listVendorItemFilter) {
+                    for (row in listProductFilter) {
                         if (row.nama_produk.toLowerCase(Locale.getDefault()).contains(charSearch.toLowerCase(Locale.getDefault()))) {
                             resultList.add(row)
                         }
@@ -100,7 +100,7 @@ class ListProductAdapter : RecyclerView.Adapter<ListProductAdapter.ProductItemHo
             }
 
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                listVendorItem = results?.values as ArrayList<ProductEntity>
+                listProduct = results?.values as ArrayList<ProductEntity>
                 notifyDataSetChanged()
             }
 

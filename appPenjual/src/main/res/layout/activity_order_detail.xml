@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryBackgroundColor"
+    tools:context=".orderList.OrderDetailActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="18dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_kode_pesanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="ID PESANAN"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:paddingHorizontal="18dp"
+        android:scrollbars="none"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="8dp"
+                app:elevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/text_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tanggal Pesanan"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_date"
+                        android:layout_marginTop="8dp"
+                        android:text="Nama Pemesan"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="17/11/21 08:05"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_date"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Badru Sukonyan"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="8dp"
+                app:elevation="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_order_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:listitem="@layout/item_order_item" />
+
+                    <View
+                        android:id="@+id/separator1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/rv_order_item"
+                        android:layout_marginVertical="10dp"
+                        android:background="#c0c0c0" />
+
+                    <TextView
+                        android:id="@+id/text_note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/separator1"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Catatan"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/tv_note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_note"
+                        android:layout_marginTop="4dp"
+                        android:text=""
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.chand.progressbutton.ProgressButton
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                app:p_arrowVisible="false"
+                app:p_backgroundTint="@color/primaryColor"
+                app:p_bgColor="@color/colorSecondary"
+                app:p_cornerRadius="5dp"
+                app:p_layoutDirection="ltr"
+                app:p_progressBGColor="@color/colorSecondary"
+                app:p_progressColor="@color/primaryColor"
+                app:p_rippleColor="@color/primaryLightColor"
+                app:p_style="circleBar"
+                app:p_text="Konfirmasi"
+                app:p_textColor="@color/white"
+                app:p_textSize="18sp" />
+
+            <com.chand.progressbutton.ProgressButton
+                android:id="@+id/btn_stock_empty"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                app:p_arrowVisible="false"
+                app:p_backgroundTint="@color/primaryBackgroundColor"
+                app:p_bgColor="@color/colorSecondary"
+                app:p_cornerRadius="5dp"
+                app:p_layoutDirection="ltr"
+                app:p_progressBGColor="@color/colorSecondary"
+                app:p_progressColor="@color/primaryColor"
+                app:p_rippleColor="@color/primaryLightColor"
+                app:p_strokeColor="@color/primaryColor"
+                app:p_strokeWidth="2dp"
+                app:p_style="circleBar"
+                app:p_text="Stok Habis"
+                app:p_textColor="@color/primaryColor"
+                app:p_textSize="18sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

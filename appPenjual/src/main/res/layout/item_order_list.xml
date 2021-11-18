@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="22dp"
+    android:backgroundTint="@color/white"
     android:foreground="?android:attr/selectableItemBackground"
     app:cardCornerRadius="8dp"
     app:elevation="8dp">
@@ -16,20 +17,20 @@
         android:padding="12dp">
 
         <LinearLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="14dp"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_order_time"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tv_fish_name"
+                android:id="@+id/tv_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="4dp"
                 android:fontFamily="sans-serif-black"
                 android:text="John Doe"
                 android:textColor="@color/black"
@@ -40,7 +41,7 @@
                 android:id="@+id/tv_order_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="4dp"
                 android:text="ID-448506"
                 android:textColor="@color/black"
                 android:textSize="16sp"
@@ -87,6 +88,7 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/tv_status"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="status"
@@ -106,8 +108,8 @@
             android:text="19.45"
             android:textColor="@color/md_grey_700"
             android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

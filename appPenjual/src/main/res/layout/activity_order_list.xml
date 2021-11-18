@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/primaryBackgroundColor"
+    android:background="@color/primaryBackgroundColor"
     tools:context=".orderList.OrderListActivity">
 
     <LinearLayout
@@ -38,12 +38,24 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_location"
+        android:id="@+id/rv_order_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:paddingHorizontal="16dp"
         tools:listitem="@layout/item_order_list"
         app:layout_constraintTop_toBottomOf="@id/ll_header"/>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/loading_anim"
+        style="@style/SpinKitView.Large.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/secondaryLightColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

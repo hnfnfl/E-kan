@@ -12,14 +12,11 @@ import kotlin.collections.ArrayList
 class ListTopFiveProductAdapter : RecyclerView.Adapter<ListTopFiveProductAdapter.ProductItemHolder>() {
 
     private var listVendorItem = ArrayList<ProductEntity>()
-    private var listVendorItemFilter = ArrayList<ProductEntity>()
-
 
     fun setListTopFiveVendorItem(listVendorItem: List<ProductEntity>?) {
         if (listVendorItem == null) return
         this.listVendorItem.clear()
         this.listVendorItem.addAll(listVendorItem)
-        this.listVendorItemFilter = listVendorItem as ArrayList<ProductEntity>
         notifyDataSetChanged()
     }
 
