@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_kan.MainActivity
 import com.example.e_kan.R
 import com.example.e_kan.databinding.ActivityListProductBinding
+import com.example.e_kan.orderList.OrderListActivity
 import com.example.e_kan.retrofit.DataService
 import com.example.e_kan.retrofit.RetrofitClient
 import com.example.e_kan.retrofit.response.ProductResponse
@@ -38,12 +39,12 @@ class ListProductActivity : AppCompatActivity() {
         val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
 
         listProductBinding.btnBack.setOnClickListener {
-            startActivity(Intent(this@ListProductActivity, MainActivity::class.java))
-            finish()
+            onBackPressed()
         }
 
         listProductBinding.btnAddProduct.setOnClickListener {
             startActivity(Intent(this@ListProductActivity, AddProductActivity::class.java))
+            finish()
         }
 
         listProductBinding.svProduct.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -59,6 +60,11 @@ class ListProductActivity : AppCompatActivity() {
 
         listProductAdapter = ListProductAdapter()
         listProduct(idpenjual, tokenAuth)
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this@ListProductActivity, MainActivity::class.java))
+        finish()
     }
 
     private fun listProduct(idpenjual: String, tokenAuth: String) {

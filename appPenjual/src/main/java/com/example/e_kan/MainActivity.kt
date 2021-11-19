@@ -96,7 +96,6 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
                 Toasty.error(this@MainActivity, R.string.try_again, Toasty.LENGTH_LONG).show()
             }
-
         })
     }
 
@@ -114,7 +113,6 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 Toasty.error(this@MainActivity, R.string.try_again, Toasty.LENGTH_LONG).show()
             }
-
         })
     }
 
@@ -144,6 +142,5 @@ class MainActivity : AppCompatActivity() {
                 Toasty.error(this@MainActivity, R.string.try_again, Toasty.LENGTH_LONG).show()
             }
         })
-
     }
 }

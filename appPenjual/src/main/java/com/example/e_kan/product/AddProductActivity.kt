@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.e_kan.MainActivity
 import com.example.e_kan.databinding.ActivityAddProductBinding
 import com.example.e_kan.retrofit.DataService
 import com.example.e_kan.retrofit.RetrofitClient
@@ -38,7 +39,6 @@ class AddProductActivity : AppCompatActivity() {
 
         addProductBinding.btnBack.setOnClickListener {
             onBackPressed()
-            finish()
         }
 
         addProductBinding.btnAddProduct.setOnClickListener {
@@ -135,6 +135,11 @@ class AddProductActivity : AppCompatActivity() {
                     })
             }
         }
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this@AddProductActivity, ListProductActivity::class.java))
+        finish()
     }
 
     private fun validate(): Boolean {

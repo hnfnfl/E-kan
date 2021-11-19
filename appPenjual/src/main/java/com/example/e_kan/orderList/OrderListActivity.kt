@@ -2,6 +2,8 @@ package com.example.e_kan.orderList
 
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,6 +25,7 @@ class OrderListActivity : AppCompatActivity() {
     private lateinit var myPreferences: MySharedPreferences
     private lateinit var orderListAdapter: OrderListAdapter
     private var orderList: ArrayList<OrderEntity> = arrayListOf()
+    private var filterStatus: ArrayList<OrderEntity> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +44,65 @@ class OrderListActivity : AppCompatActivity() {
 
         orderListAdapter = OrderListAdapter()
         orderList(idpenjual, tokenAuth)
+
+        // Create an ArrayAdapter
+        val array = resources.getStringArray(R.array.status_filter)
+        val adapter = ArrayAdapter.createFromResource(this, R.array.status_filter, android.R.layout.simple_spinner_item)
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        // Apply the adapter to the spinner
+        orderListBinding.statusFilter.adapter = adapter
+        orderListBinding.statusFilter.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                when (array[p2]) {
+                    getString(R.string.show_all) -> {
+                        filterStatus.clear()
+                        orderListAdapter.setListVendorItem(orderList)
+                    }
+                    getString(R.string.unprocessed) -> {
+                        filterStatus.clear()
+                        orderList.forEach { orderList ->
+                            if (orderList.status == getString(R.string.unprocessed)) {
+                                filterStatus.add(orderList)
+                            }
+                        }
+                        orderListAdapter.setListVendorItem(filterStatus)
+                    }
+                    getString(R.string.processed) -> {
+                        filterStatus.clear()
+                        orderList.forEach { orderList ->
+                            if (orderList.status == getString(R.string.processed)) {
+                                filterStatus.add(orderList)
+                            }
+                        }
+                        orderListAdapter.setListVendorItem(filterStatus)
+                    }
+                    getString(R.string.sent) -> {
+                        filterStatus.clear()
+                        orderList.forEach { orderList ->
+                            if (orderList.status == getString(R.string.sent)) {
+                                filterStatus.add(orderList)
+                            }
+                        }
+                        orderListAdapter.setListVendorItem(filterStatus)
+                    }
+                    getString(R.string.done) -> {
+                        filterStatus.clear()
+                        orderList.forEach { orderList ->
+                            if (orderList.status == getString(R.string.done)) {
+                                filterStatus.add(orderList)
+                            }
+                        }
+                        orderListAdapter.setListVendorItem(filterStatus)
+                    }
+                }
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
+        }
+
+
     }
 
     private fun orderList(idpenjual: String, tokenAuth: String) {

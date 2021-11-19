@@ -83,4 +83,13 @@ interface DataService {
         @Field("idpenjual") idpenjual: String,
         @Header("Authorization") token: String
     ): Call<OrderResponse>
+
+    //edit status pesanan
+    @FormUrlEncoded
+    @POST("main_penjual/editStatus")
+    fun editStatus(
+        @Field("idpesanan") idpesanan: String,
+        @Field("status") status: String,
+        @Header("Authorization") token: String
+    ): Call<DefaultResponse>
 }

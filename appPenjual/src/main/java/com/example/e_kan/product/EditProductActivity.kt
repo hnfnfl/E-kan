@@ -71,7 +71,7 @@ class EditProductActivity : AppCompatActivity() {
             .into(editProductBinding.imgFish)
 
         editProductBinding.btnBack.setOnClickListener {
-            startActivity(Intent(this@EditProductActivity, ListProductActivity::class.java))
+            onBackPressed()
         }
 
         editProductBinding.btnChangeImg.setOnClickListener {
@@ -92,8 +92,8 @@ class EditProductActivity : AppCompatActivity() {
                             val fileUri = data?.data
                             this.photoUri = fileUri
                             editProductBinding.imgFish.setImageURI(fileUri)
-                            val file: File? = ImagePicker.getFile(data)
-                            val filePath: String = ImagePicker.getFilePath(data).toString()
+                            ImagePicker.getFile(data)
+                            ImagePicker.getFilePath(data).toString()
                         }
                         ImagePicker.RESULT_ERROR -> {
                             Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
@@ -193,6 +193,11 @@ class EditProductActivity : AppCompatActivity() {
             // Show Dialog
             mDialog.show()
         }
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this@EditProductActivity, ListProductActivity::class.java))
+        finish()
     }
 
     private fun deleteProduct(idproduk: String, tokenAuth: String) {

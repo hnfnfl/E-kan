@@ -1,8 +1,10 @@
 package com.example.e_kan.orderList
 
+import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e_kan.R
 import com.example.e_kan.databinding.ItemOrderListBinding
@@ -31,21 +33,22 @@ class OrderListAdapter : RecyclerView.Adapter<OrderListAdapter.ProductItemHolder
                 tvStatus.text = status
                 when (status) {
                     itemView.context.getString(R.string.unprocessed) -> {
-                        tvStatus.setTextColor(itemView.resources.getColor(R.color.md_red_400))
+                        tvStatus.setTextColor(ContextCompat.getColor(itemView.context, R.color.md_red_400))
                     }
                     itemView.context.getString(R.string.processed) -> {
-                        tvStatus.setTextColor(itemView.resources.getColor(R.color.md_indigo_400))
+                        tvStatus.setTextColor(ContextCompat.getColor(itemView.context, R.color.md_indigo_400))
                     }
                     itemView.context.getString(R.string.sent) -> {
-                        tvStatus.setTextColor(itemView.resources.getColor(R.color.md_blue_400))
+                        tvStatus.setTextColor(ContextCompat.getColor(itemView.context, R.color.md_blue_400))
                     }
                     itemView.context.getString(R.string.done) -> {
-                        tvStatus.setTextColor(itemView.resources.getColor(R.color.md_green_400))
+                        tvStatus.setTextColor(ContextCompat.getColor(itemView.context, R.color.md_green_400))
                     }
                 }
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, OrderDetailActivity::class.java)
                         .apply {
+                            putExtra(OrderDetailActivity.idpesanan, orderList.idpesanan)
                             putExtra(OrderDetailActivity.kodePesanan, orderList.kode_pesanan)
                             putExtra(OrderDetailActivity.namaPemesan, orderList.nama)
                             putExtra(OrderDetailActivity.tgl, orderList.timestamp)
@@ -55,6 +58,7 @@ class OrderListAdapter : RecyclerView.Adapter<OrderListAdapter.ProductItemHolder
                         }
                     intent.putExtra("pesanan", orderList.pesanan)
                     itemView.context.startActivity(intent)
+                    (itemView.context as Activity).finish()
                 }
             }
         }

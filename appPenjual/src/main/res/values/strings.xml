@@ -47,10 +47,12 @@
     <string name="confirm_delete">Apakah Anda yaking ingin menhapus produk ini?</string>
     <string name="fish_detail_qty">x%1$s</string>
     <string name="fish_detail_price">Rp %1$s</string>
+    <string name="show_all">tampilkan semua</string>
     <string name="unprocessed">belum diproses</string>
     <string name="processed">diproses</string>
     <string name="sent">dikirim</string>
     <string name="done">selesai</string>
+    <string name="empty_stock">stok kosong</string>
     <string name="btn_back">tombol kembali</string>
     <string name="detail_date_order">Tanggal Pesanan</string>
     <string name="detail_user_name">Nama Pemesan</string>
@@ -63,5 +65,15 @@
     <string name="btn_order">tombol daftar pesanan</string>
     <string name="btn_settings">tombol setting</string>
     <string name="separator_dot">separator</string>
+    <string name="dropdown_logo">logo dropdown</string>
+    <string name="status_filter">Filter status pesanan</string>
+    <string name="btn_edit_product">tombol edit produk</string>
+    <string-array name="status_filter">
+        <item>tampilkan semua</item>
+        <item>belum diproses</item>
+        <item>diproses</item>
+        <item>dikirim</item>
+        <item>selesai</item>
+    </string-array>
 
 </resources>

@@ -56,8 +56,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="130dp"
-        android:background="@drawable/bg_product"
+        android:background="@color/primaryBackgroundColor"
         android:orientation="vertical"
+        android:paddingHorizontal="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -65,8 +66,6 @@
             android:id="@+id/rv_product_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="12dp"
-            android:paddingHorizontal="16dp"
             tools:listitem="@layout/item_product" />
 
     </LinearLayout>
@@ -81,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/sv_product" />
+        app:layout_constraintTop_toTopOf="@id/ll_list_item" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_add_product"
