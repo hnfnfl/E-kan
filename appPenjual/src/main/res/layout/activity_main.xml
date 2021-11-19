@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:background="@null"
+        android:contentDescription="@string/btn_notification"
         android:src="@drawable/ic_notification"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:background="@null"
+        android:contentDescription="@string/btn_edit_profile"
         android:src="@drawable/ic_profile"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +104,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:contentDescription="@string/btn_product"
                                 android:src="@drawable/ic_fish"
                                 app:tint="@color/md_blue_900" />
                         </LinearLayout>
@@ -138,6 +141,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:contentDescription="@string/btn_order"
                                 android:src="@drawable/ic_history"
                                 app:tint="@color/md_teal_900" />
                         </LinearLayout>
@@ -173,6 +177,7 @@
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:contentDescription="@string/btn_settings"
                                 android:src="@drawable/ic_setting"
                                 app:tint="@color/md_blue_grey_900" />
                         </LinearLayout>

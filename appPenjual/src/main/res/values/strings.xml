@@ -51,5 +51,17 @@
     <string name="processed">diproses</string>
     <string name="sent">dikirim</string>
     <string name="done">selesai</string>
+    <string name="btn_back">tombol kembali</string>
+    <string name="detail_date_order">Tanggal Pesanan</string>
+    <string name="detail_user_name">Nama Pemesan</string>
+    <string name="detail_order">Detail Pesanan</string>
+    <string name="detail_note">Catatan</string>
+    <string name="detail_order_address">Alamat Pengantaran</string>
+    <string name="btn_notification">tombol notifikasi</string>
+    <string name="btn_edit_profile">tombol edit profil</string>
+    <string name="btn_product">tombol produk</string>
+    <string name="btn_order">tombol daftar pesanan</string>
+    <string name="btn_settings">tombol setting</string>
+    <string name="separator_dot">separator</string>
 
 </resources>

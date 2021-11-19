@@ -130,6 +130,7 @@
                     android:layout_gravity="center"
                     android:layout_marginHorizontal="8dp"
                     android:backgroundTint="@color/md_amber_300"
+                    android:contentDescription="@string/separator_dot"
                     android:src="@drawable/ic_dot" />
 
                 <LinearLayout

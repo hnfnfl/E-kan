@@ -12,7 +12,6 @@ class OrderDetailActivity : AppCompatActivity() {
 
     private lateinit var orderDetailBinding: ActivityOrderDetailBinding
     private lateinit var orderListItemAdapter: OrderListItemAdapter
-    private var itemList: ArrayList<OrderItemEntity> = arrayListOf()
 
     companion object {
         const val kodePesanan = "kodePesanan"
@@ -48,6 +47,10 @@ class OrderDetailActivity : AppCompatActivity() {
             orderDetailBinding.btnStockEmpty.startAnimation()
         }
 
+        orderDetailBinding.btnSent.setOnClickListener {
+            orderDetailBinding.btnSent.startAnimation()
+        }
+
         orderListItemAdapter = OrderListItemAdapter()
         orderDetailBinding.tvKodePesanan.text = kodePesanan.toString()
         orderDetailBinding.tvDate.text = tgl.toString()
@@ -57,11 +60,12 @@ class OrderDetailActivity : AppCompatActivity() {
         if (status == getString(R.string.unprocessed)){
             orderDetailBinding.btnConfirm.visibility = View.VISIBLE
             orderDetailBinding.btnStockEmpty.visibility = View.VISIBLE
+        } else if (status == getString(R.string.processed)){
+            orderDetailBinding.btnSent.visibility = View.VISIBLE
         }
 
         val list = intent.getParcelableArrayListExtra<OrderItemEntity>("pesanan") as ArrayList<OrderItemEntity>
-        itemList = list
-        orderListItemAdapter.setOrderItem(itemList)
+        orderListItemAdapter.setOrderItem(list)
         orderListItemAdapter.notifyDataSetChanged()
 
         with(orderDetailBinding.rvOrderItem){
