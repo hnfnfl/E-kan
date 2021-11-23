@@ -68,6 +68,9 @@
     <string name="dropdown_logo">logo dropdown</string>
     <string name="status_filter">Filter status pesanan</string>
     <string name="btn_edit_product">tombol edit produk</string>
+    <string name="total_product_sales">Jumlah penjualan produk</string>
+    <string name="last_month">1 Bulan terakhir</string>
+    <string name="last_year">1 Tahun terakhir</string>
     <string-array name="status_filter">
         <item>tampilkan semua</item>
         <item>belum diproses</item>

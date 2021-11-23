@@ -19,12 +19,22 @@
             android:id="@+id/tv_notif_body"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID-448506"
+            android:text="ID-44567"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_notif_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="08.56"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_notif_body"
             tools:ignore="HardcodedText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

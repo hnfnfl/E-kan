@@ -217,7 +217,7 @@
                     android:layout_height="38dp"
                     app:toggle_backgroundColor="@color/primaryLightColor"
                     app:toggle_selectedBackgroundColor="@color/primaryColor"
-                    app:toggle_text="1 Bulan terakhir"
+                    app:toggle_text="@string/last_month"
                     app:toggle_textColor="@color/white" />
 
                 <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
@@ -226,13 +226,13 @@
                     android:layout_height="38dp"
                     app:toggle_backgroundColor="@color/primaryLightColor"
                     app:toggle_selectedBackgroundColor="@color/primaryColor"
-                    app:toggle_text="1 Tahun terakhir"
+                    app:toggle_text="@string/last_year"
                     app:toggle_textColor="@color/white" />
 
             </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
 
-            <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/chart_weight"
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/time_chart"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:layout_marginTop="8dp" />

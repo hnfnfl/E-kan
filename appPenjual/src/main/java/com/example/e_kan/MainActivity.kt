@@ -2,7 +2,6 @@ package com.example.e_kan
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -16,16 +15,21 @@ import com.example.e_kan.product.ProductEntity
 import com.example.e_kan.retrofit.AuthService
 import com.example.e_kan.retrofit.DataService
 import com.example.e_kan.retrofit.RetrofitClient
+import com.example.e_kan.retrofit.response.ChartResponse
 import com.example.e_kan.retrofit.response.DefaultResponse
 import com.example.e_kan.retrofit.response.LoginResponse
 import com.example.e_kan.retrofit.response.ProductResponse
 import com.example.e_kan.settings.SettingActivity
 import com.example.e_kan.settings.profile.ProfileActivity
+import com.example.e_kan.utils.AxisDateFormatter
 import com.example.e_kan.utils.Constants
 import com.example.e_kan.utils.MySharedPreferences
+import com.github.mikephil.charting.components.XAxis.XAxisPosition
+import com.github.mikephil.charting.data.*
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import es.dmoral.toasty.Toasty
+import nl.bryanderidder.themedtogglebuttongroup.ThemedButton
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -78,9 +82,18 @@ class MainActivity : AppCompatActivity() {
         })
         refreshAuthToken(idpenjual)
 
+        val themedButtonGroup = mainBinding.time
+        themedButtonGroup.setOnSelectListener { button: ThemedButton ->
+            if (button.text == getString(R.string.last_month)) {
+                getTimeChart(idpenjual, "MONTH", tokenAuth)
+            } else {
+                getTimeChart(idpenjual, "YEAR", tokenAuth)
+            }
+        }
+
+
         listTopFiveAdapter = ListTopFiveProductAdapter()
         listTopFiveProduct(idpenjual, tokenAuth)
-
     }
 
     private fun insertToken(idpenjual: String, device_token: String) {
@@ -141,6 +154,60 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call<ProductResponse>, t: Throwable) {
                 Toasty.error(this@MainActivity, R.string.try_again, Toasty.LENGTH_LONG).show()
             }
+        })
+    }
+
+    private fun getTimeChart(idpenjual: String, time: String, tokenAuth: String) {
+        val service = RetrofitClient().apiRequest().create(DataService::class.java)
+        service.getTimeChart(idpenjual, time, "Bearer $tokenAuth").enqueue(object : Callback<ChartResponse> {
+            override fun onResponse(call: Call<ChartResponse>, response: Response<ChartResponse>) {
+                if (response.isSuccessful) {
+                    if (response.body()!!.status == "success") {
+                        val chart = mainBinding.timeChart
+                        chart.visibility = View.VISIBLE
+                        val listData = response.body()!!.data
+                        var i = 0
+                        val entries = ArrayList<BarEntry>()
+                        val labels = ArrayList<String>()
+
+                        while (i < listData.size) {
+                            val stepX = 1F * i
+                            entries.add(BarEntry(stepX, listData[i].pesanan.toFloat()))
+                            labels.add(listData[i].tglPesan)
+                            i++
+                        }
+                        val barDataSet = BarDataSet(entries, "")
+                        val data = BarData(barDataSet)
+
+                        chart.data = data
+                        chart.setTouchEnabled(true)
+                        chart.isDragEnabled
+                        chart.animateXY(100, 500)
+                        chart.description.isEnabled = false
+                        chart.legend.isEnabled = false
+//                        chart.setMaxVisibleValueCount(40) // if more than 60 entries are displayed in the chart, no values will be drawn
+
+                        //hide grid lines
+                        chart.axisLeft.setDrawGridLines(false)
+                        chart.xAxis.setDrawGridLines(false)
+                        chart.xAxis.setDrawAxisLine(false)
+                        chart.invalidate()
+
+                        val tanggal = AxisDateFormatter(labels.toArray(arrayOfNulls<String>(labels.size)))
+                        val xAxis = chart.xAxis
+                        xAxis.position = XAxisPosition.BOTTOM
+                        xAxis.setDrawGridLines(false)
+                        xAxis.granularity = 1f // only intervals of 1 day
+                        xAxis.labelCount = 7
+                        xAxis.valueFormatter = tanggal
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<ChartResponse>, t: Throwable) {
+                Toasty.error(this@MainActivity, R.string.try_again, Toasty.LENGTH_LONG).show()
+            }
+
         })
     }
 }

@@ -1,8 +1,6 @@
 package com.example.e_kan.retrofit
 
-import com.example.e_kan.retrofit.response.DefaultResponse
-import com.example.e_kan.retrofit.response.OrderResponse
-import com.example.e_kan.retrofit.response.ProductResponse
+import com.example.e_kan.retrofit.response.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -92,4 +90,21 @@ interface DataService {
         @Field("status") status: String,
         @Header("Authorization") token: String
     ): Call<DefaultResponse>
+
+    //get list notifikasi
+    @FormUrlEncoded
+    @POST("main_penjual/getNotification")
+    fun getNotification(
+        @Field("idpenjual") idpenjual: String,
+        @Header("Authorization") token: String
+    ): Call<NotificationResponse>
+
+    //get Time Chart
+    @FormUrlEncoded
+    @POST("main_penjual/getTimeChart")
+    fun getTimeChart(
+        @Field("idpenjual") idpenjual: String,
+        @Field("time") time: String,
+        @Header("Authorization") token: String
+    ): Call<ChartResponse>
 }

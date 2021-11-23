@@ -157,7 +157,7 @@ class EditProductActivity : AppCompatActivity() {
                                     finish()
                                 } else {
                                     editProductBinding.btnEditProduct.endAnimation()
-                                    Toasty.error(this@EditProductActivity, response.message(), Toasty.LENGTH_LONG).show()
+                                    Toasty.error(this@EditProductActivity, getString(R.string.try_again), Toasty.LENGTH_LONG).show()
                                 }
                             }
                         }

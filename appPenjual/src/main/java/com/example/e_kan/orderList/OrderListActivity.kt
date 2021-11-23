@@ -1,5 +1,6 @@
 package com.example.e_kan.orderList
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -7,6 +8,7 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.e_kan.MainActivity
 import com.example.e_kan.R
 import com.example.e_kan.databinding.ActivityOrderListBinding
 import com.example.e_kan.retrofit.DataService
@@ -39,7 +41,6 @@ class OrderListActivity : AppCompatActivity() {
 
         orderListBinding.btnBack.setOnClickListener {
             onBackPressed()
-            finish()
         }
 
         orderListAdapter = OrderListAdapter()
@@ -131,5 +132,10 @@ class OrderListActivity : AppCompatActivity() {
                 Toasty.error(this@OrderListActivity, R.string.try_again, Toasty.LENGTH_LONG).show()
             }
         })
+    }
+
+    override fun onBackPressed() {
+        startActivity(Intent(this@OrderListActivity, MainActivity::class.java))
+        finish()
     }
 }
