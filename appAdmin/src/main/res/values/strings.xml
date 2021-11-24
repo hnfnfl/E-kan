@@ -1,3 +1,67 @@
 <resources>
     <string name="app_name">E-kan Admin</string>
+    <string name="login_title">Masuk ke akun kamu</string>
+    <string name="email">Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="login">Masuk</string>
+    <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="register">Daftar</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="register_title">Buat akun baru</string>
+    <string name="name">Nama</string>
+    <string name="address">Alamat</string>
+    <string name="phone">No HP</string>
+    <string name="resend_code">Kirim ulang kode</string>
+    <string name="otp_desc">Masukkan 4 digit kode yang dikirimkan ke email kamu</string>
+    <string name="otp_title">Kode verifikasi telah dikirim!</string>
+    <string name="email_pass_not_match">Maaf Email / Kata Sandi Anda Salah</string>
+    <string name="email_not_registered">Maaf Email Anda Belum Terdaftar</string>
+    <string name="try_again">Silahkan Coba Lagi</string>
+    <string name="otp_not_match">Kode OTP tidak cocok</string>
+    <string name="email_cant_empty">Email tidak boleh kosong</string>
+    <string name="email_format_error">Format email salah</string>
+    <string name="password_cant_empty">Kata sandi tidak boleh kosong</string>
+    <string name="phone_cant_empty">Nomor HP tidak boleh kosong</string>
+    <string name="name_cant_empty">Nama tidak boleh kosong</string>
+    <string name="brand">e-Kan Admin</string>
+    <string name="btn_notification">tombol notifikasi</string>
+    <string name="menu">Menu</string>
+    <string name="btn_settings">tombol setting</string>
+    <string name="settings">Setting</string>
+    <string name="btn_edit_profile">tombol edit profil</string>
+    <string name="btn_user_list">tombol daftar pengguna</string>
+    <string name="user_list">Daftar \nPengguna</string>
+    <string name="btn_seller_list">tombol daftar penjual</string>
+    <string name="seller_list">Daftar Penjual</string>
+    <string name="btn_edit_user">tombol edit pengguna</string>
+    <string name="separator_dot">separator</string>
+    <string name="status_filter">Filter status transaksi</string>
+    <string name="dropdown_logo">logo_dropdown</string>
+    <string name="edit_profile">Edit Profil</string>
+    <string name="privacy_policy">Kebijakan Privasi</string>
+    <string name="terms_condition">Ketentuan Layanan</string>
+    <string name="logout">Logout</string>
+    <string name="confirm_logout">Apakah Anda Yakin Ingin Keluar?</string>
+    <string name="no">Tidak</string>
+    <string name="yes">Ya</string>
+    <string name="btn_back">tombol kembali</string>
+    <string name="change_photo">Ganti Foto</string>
+    <string name="save">Simpan</string>
+    <string name="fish_detail_price">Rp %1$s</string>
+    <string name="fish_detail_qty">x%1$s</string>
+    <string name="detail_date_order">Tanggal Pesanan</string>
+    <string name="detail_user_name">Nama Pemesan</string>
+    <string name="detail_order">Detail Pesanan</string>
+    <string name="detail_shop_name">Nama Toko Penjual</string>
+    <string name="detail_note">Catatan</string>
+    <string name="detail_order_address">Alamat Pengantaran</string>
+    <string name="transfer_evidence">Foto Bukti Transfer</string>
+
+    <string-array name="transaction_status_filter">
+        <item>tampilkan semua</item>
+        <item>tertunda</item>
+        <item>disetujui</item>
+        <item>ditolak</item>
+        <item>dibatalkan</item>
+    </string-array>
 </resources>

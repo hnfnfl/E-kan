@@ -53,15 +53,15 @@ class LoginActivity : AppCompatActivity() {
     private fun isDataFilled(): Boolean {
         fun String.isValidEmail() = isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
         if (loginBinding.tvValueEmailLogin.text.toString() == "") {
-            loginBinding.tvValueEmailLogin.error = "Email tidak boleh kosong"
+            loginBinding.tvValueEmailLogin.error = getString(string.email_cant_empty)
             loginBinding.tvValueEmailLogin.requestFocus()
             return false
         } else if (!loginBinding.tvValueEmailLogin.text.toString().isValidEmail()) {
-            loginBinding.tvValueEmailLogin.error = "Format email salah"
+            loginBinding.tvValueEmailLogin.error = getString(string.email_format_error)
             loginBinding.tvValueEmailLogin.requestFocus()
             return false
         } else if (loginBinding.tvValuePasswordLogin.text.toString() == "") {
-            loginBinding.tvValuePasswordLogin.error = "Kata sandi tidak boleh kosong"
+            loginBinding.tvValuePasswordLogin.error = getString(string.password_cant_empty)
             loginBinding.tvValuePasswordLogin.requestFocus()
             return false
         }

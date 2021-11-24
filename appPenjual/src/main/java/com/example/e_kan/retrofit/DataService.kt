@@ -9,7 +9,7 @@ import retrofit2.http.*
 interface DataService {
     //edit profil penjual
     @Multipart
-    @POST("main_penjual/editProfile")
+    @POST("penjual/main_penjual/editProfile")
     fun editProfile(
         @Part("idpenjual") idpenjual: RequestBody,
         @Part("nama_penjual") nama_penjual: RequestBody,
@@ -23,7 +23,7 @@ interface DataService {
 
     //get data semua produk
     @FormUrlEncoded
-    @POST("main_penjual/getAllProduct")
+    @POST("penjual/main_penjual/getAllProduct")
     fun getAllProduct(
         @Field("idpenjual") idpenjual: String,
         @Header("Authorization") token: String
@@ -31,7 +31,7 @@ interface DataService {
 
     //get top 5 penjualan
     @FormUrlEncoded
-    @POST("main_penjual/getTopFive")
+    @POST("penjual/main_penjual/getTopFive")
     fun getTopFiveProduct(
         @Field("idpenjual") idpenjual: String,
         @Header("Authorization") token: String
@@ -39,7 +39,7 @@ interface DataService {
 
     //add data product
     @Multipart
-    @POST("main_penjual/addProduct")
+    @POST("penjual/main_penjual/addProduct")
     fun addProduct(
         @Part("idpenjual") idpenjual: RequestBody,
         @Part("nama_produk") nama_produk: RequestBody,
@@ -53,7 +53,7 @@ interface DataService {
 
     //edit data produk
     @Multipart
-    @POST("main_penjual/editProduct")
+    @POST("penjual/main_penjual/editProduct")
     fun editProduct(
         @Part("idproduk") idproduk: RequestBody,
         @Part("idpenjual") idpenjual: RequestBody,
@@ -68,7 +68,7 @@ interface DataService {
 
     //delete produk
     @FormUrlEncoded
-    @POST("main_penjual/deleteProduct")
+    @POST("penjual/main_penjual/deleteProduct")
     fun deleteProduct(
         @Field("idproduk") idproduk: String,
         @Header("Authorization") token: String
@@ -76,7 +76,7 @@ interface DataService {
 
     //get daftar pesanan
     @FormUrlEncoded
-    @POST("main_penjual/getOrder")
+    @POST("penjual/main_penjual/getOrder")
     fun getOrder(
         @Field("idpenjual") idpenjual: String,
         @Header("Authorization") token: String
@@ -84,7 +84,7 @@ interface DataService {
 
     //edit status pesanan
     @FormUrlEncoded
-    @POST("main_penjual/editStatus")
+    @POST("penjual/main_penjual/editStatus")
     fun editStatus(
         @Field("idpesanan") idpesanan: String,
         @Field("status") status: String,
@@ -93,7 +93,7 @@ interface DataService {
 
     //get list notifikasi
     @FormUrlEncoded
-    @POST("main_penjual/getNotification")
+    @POST("penjual/main_penjual/getNotification")
     fun getNotification(
         @Field("idpenjual") idpenjual: String,
         @Header("Authorization") token: String
@@ -101,7 +101,7 @@ interface DataService {
 
     //get Time Chart
     @FormUrlEncoded
-    @POST("main_penjual/getTimeChart")
+    @POST("penjual/main_penjual/getTimeChart")
     fun getTimeChart(
         @Field("idpenjual") idpenjual: String,
         @Field("time") time: String,

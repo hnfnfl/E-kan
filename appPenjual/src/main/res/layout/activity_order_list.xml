@@ -113,4 +113,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ll_list_item" />
 
+    <ImageView
+        android:id="@+id/img_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/img_empty"
+        android:src="@drawable/img_empty"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ll_list_item"
+        app:layout_constraintStart_toStartOf="@+id/ll_list_item"
+        app:layout_constraintTop_toTopOf="@+id/ll_list_item" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

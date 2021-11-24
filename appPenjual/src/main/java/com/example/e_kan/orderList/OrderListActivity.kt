@@ -124,6 +124,9 @@ class OrderListActivity : AppCompatActivity() {
                             setHasFixedSize(true)
                             adapter = orderListAdapter
                         }
+                    } else {
+                        orderListBinding.imgEmpty.visibility = View.VISIBLE
+                        orderListBinding.loadingAnim.visibility = View.GONE
                     }
                 }
             }

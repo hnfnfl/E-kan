@@ -62,6 +62,8 @@ class NotificationActivity : AppCompatActivity() {
                             setHasFixedSize(true)
                             adapter = notifAdapter
                         }
+                    } else {
+                        notificationBinding.imgEmpty.visibility = View.VISIBLE
                     }
                 }
             }

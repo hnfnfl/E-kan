@@ -2,21 +2,37 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.e_kanadmin">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ekan">
+        <activity android:name=".transaction.TransactionDetailActivity"></activity>
+        <activity android:name=".settings.profile.ProfileActivity" />
+        <activity android:name=".settings.SettingActivity" />
+        <activity android:name=".auth.register.OTPActivity" />
+        <activity android:name=".auth.register.RegisterActivity" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false">
+            android:name=".auth.login.LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
