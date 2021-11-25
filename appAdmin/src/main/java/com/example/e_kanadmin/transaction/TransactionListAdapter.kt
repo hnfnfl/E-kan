@@ -30,16 +30,16 @@ class TransactionListAdapter : RecyclerView.Adapter<TransactionListAdapter.Trans
                 val statusTransaksi = transactionItem.transaksi
                 tvStatus.text = statusTransaksi
                 when (statusTransaksi) {
-                    "tertunda" -> {
+                    itemView.context.getString(R.string.pending) -> {
                         tvStatus.setTextColor(ContextCompat.getColor(itemView.context, R.color.md_deep_orange_400))
                     }
-                    "disetujui" -> {
+                    itemView.context.getString(R.string.approved) -> {
                         tvStatus.setTextColor(ContextCompat.getColor(itemView.context, R.color.md_green_400))
                     }
-                    "ditolak" -> {
+                    itemView.context.getString(R.string.rejected) -> {
                         tvStatus.setTextColor(ContextCompat.getColor(itemView.context, R.color.md_red_600))
                     }
-                    "dibatalkan" -> {
+                    itemView.context.getString(R.string.canceled) -> {
                         tvStatus.setTextColor(ContextCompat.getColor(itemView.context, R.color.md_blue_grey_400))
                     }
                 }

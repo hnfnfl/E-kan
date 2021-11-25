@@ -41,8 +41,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:fillViewport="true"
         android:paddingHorizontal="18dp"
         android:scrollbars="none"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,7 +136,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:visibility="gone"
                 app:cardCornerRadius="8dp"
                 app:elevation="8dp">
 
@@ -232,6 +232,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:layout_marginBottom="16dp"
                 android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="8dp"
                 app:elevation="8dp">
@@ -254,21 +255,22 @@
                         android:id="@+id/tv_transfer_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
                         android:layout_below="@+id/text_transfer"
                         android:layout_alignParentEnd="true"
+                        android:layout_marginTop="4dp"
                         android:text=""
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
                     <ImageView
                         android:id="@+id/img_bukti_transfer"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_transfer_date"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="6dp"
+                        android:adjustViewBounds="true"
                         android:contentDescription="@string/transfer_evidence"
                         android:src="@drawable/img_empty" />
 
@@ -277,10 +279,10 @@
             </androidx.cardview.widget.CardView>
 
             <com.chand.progressbutton.ProgressButton
-                android:id="@+id/btn_confirm"
+                android:id="@+id/btn_approve"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
                 android:visibility="gone"
                 app:p_arrowVisible="false"
                 app:p_backgroundTint="@color/primaryColor"
@@ -296,10 +298,10 @@
                 app:p_textSize="18sp" />
 
             <com.chand.progressbutton.ProgressButton
-                android:id="@+id/btn_stock_empty"
+                android:id="@+id/btn_reject"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
                 android:visibility="gone"
                 app:p_arrowVisible="false"
                 app:p_backgroundTint="@color/secondaryColor"
@@ -315,10 +317,10 @@
                 app:p_textSize="18sp" />
 
             <com.chand.progressbutton.ProgressButton
-                android:id="@+id/btn_sent"
+                android:id="@+id/btn_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
                 android:visibility="gone"
                 app:p_arrowVisible="false"
                 app:p_backgroundTint="@color/md_red_500"
@@ -326,8 +328,8 @@
                 app:p_cornerRadius="5dp"
                 app:p_layoutDirection="ltr"
                 app:p_progressBGColor="@color/md_red_500"
-                app:p_progressColor="@color/md_red_300"
-                app:p_rippleColor="@color/primaryLightColor"
+                app:p_progressColor="@color/md_red_400"
+                app:p_rippleColor="@color/md_red_400"
                 app:p_style="circleBar"
                 app:p_text="Batalkan Pesanan"
                 app:p_textColor="@color/white"

@@ -2,14 +2,16 @@ package com.example.e_kanadmin
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.e_kanadmin.transaction.TransactionEntity
-import com.example.e_kanadmin.transaction.TransactionListAdapter
 import com.example.e_kanadmin.databinding.ActivityMainBinding
+import com.example.e_kanadmin.listUser.ListUserActivity
 import com.example.e_kanadmin.retrofit.AuthService
 import com.example.e_kanadmin.retrofit.DataService
 import com.example.e_kanadmin.retrofit.RetrofitClient
@@ -18,6 +20,8 @@ import com.example.e_kanadmin.retrofit.response.LoginResponse
 import com.example.e_kanadmin.retrofit.response.TransactionResponse
 import com.example.e_kanadmin.settings.SettingActivity
 import com.example.e_kanadmin.settings.profile.ProfileActivity
+import com.example.e_kanadmin.transaction.TransactionEntity
+import com.example.e_kanadmin.transaction.TransactionListAdapter
 import com.example.e_kanadmin.utils.Constants
 import com.example.e_kanadmin.utils.MySharedPreferences
 import com.google.android.gms.tasks.OnCompleteListener
@@ -33,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var myPreferences: MySharedPreferences
     private lateinit var transactionAdapter: TransactionListAdapter
     private var listTransaction: ArrayList<TransactionEntity> = arrayListOf()
+    private var filterStatus: ArrayList<TransactionEntity> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainBinding.root)
 
         myPreferences = MySharedPreferences(this@MainActivity)
+        transactionAdapter = TransactionListAdapter()
 
         val iadmin = myPreferences.getValue(Constants.USER_ID).toString()
         val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
@@ -50,6 +56,12 @@ class MainActivity : AppCompatActivity() {
 
         mainBinding.llSetting.setOnClickListener {
             startActivity(Intent(this@MainActivity, SettingActivity::class.java))
+            finish()
+        }
+
+        mainBinding.llListUser.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ListUserActivity::class.java))
+            finish()
         }
 
 
@@ -71,8 +83,56 @@ class MainActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         // Apply the adapter to the spinner
         mainBinding.statusFilter.adapter = adapter
+        mainBinding.statusFilter.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                when (array[p2]) {
+                    getString(R.string.show_all) -> {
+                        filterStatus.clear()
+                        transactionAdapter.setListTransactionItem(listTransaction)
+                    }
+                    getString(R.string.pending) -> {
+                        filterStatus.clear()
+                        listTransaction.forEach { listTransaction ->
+                            if (listTransaction.transaksi == getString(R.string.pending)) {
+                                filterStatus.add(listTransaction)
+                            }
+                        }
+                        transactionAdapter.setListTransactionItem(filterStatus)
+                    }
+                    getString(R.string.approved) -> {
+                        filterStatus.clear()
+                        listTransaction.forEach { listTransaction ->
+                            if (listTransaction.transaksi == getString(R.string.approved)) {
+                                filterStatus.add(listTransaction)
+                            }
+                        }
+                        transactionAdapter.setListTransactionItem(filterStatus)
+                    }
+                    getString(R.string.rejected) -> {
+                        filterStatus.clear()
+                        listTransaction.forEach { listTransaction ->
+                            if (listTransaction.transaksi == getString(R.string.rejected)) {
+                                filterStatus.add(listTransaction)
+                            }
+                        }
+                        transactionAdapter.setListTransactionItem(filterStatus)
+                    }
+                    getString(R.string.canceled) -> {
+                        filterStatus.clear()
+                        listTransaction.forEach { listTransaction ->
+                            if (listTransaction.transaksi == getString(R.string.canceled)) {
+                                filterStatus.add(listTransaction)
+                            }
+                        }
+                        transactionAdapter.setListTransactionItem(filterStatus)
+                    }
+                }
+            }
 
-        transactionAdapter = TransactionListAdapter()
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
+        }
+
         listTransaction(tokenAuth)
     }
 

@@ -1,7 +1,9 @@
 package com.example.e_kanadmin.retrofit
 
 import com.example.e_kanadmin.retrofit.response.DefaultResponse
+import com.example.e_kanadmin.retrofit.response.SellerResponse
 import com.example.e_kanadmin.retrofit.response.TransactionResponse
+import com.example.e_kanadmin.retrofit.response.UserResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -26,12 +28,24 @@ interface DataService {
         @Header("Authorization") token: String
     ): Call<TransactionResponse>
 
-    //get list notifikasi
-//    @FormUrlEncoded
-//    @POST("penjual/main_penjual/getNotification")
-//    fun getNotification(
-//        @Field("idpenjual") idpenjual: String,
-//        @Header("Authorization") token: String
-//    ): Call<NotificationResponse>
+    //edit status transaksi
+    @FormUrlEncoded
+    @POST("admin/main_admin/editStatus")
+    fun editStatus(
+        @Field("idpesanan") idpesanan: String,
+        @Field("transaksi") transaksi: String,
+        @Header("Authorization") token: String
+    ): Call<DefaultResponse>
 
+    //get semua user
+    @POST("admin/main_admin/getAllUser")
+    fun getAllUser(
+        @Header("Authorization") token: String
+    ): Call<UserResponse>
+
+    //get semua seller
+    @POST("admin/main_admin/getAllSeller")
+    fun getAllSeller(
+        @Header("Authorization") token: String
+    ): Call<SellerResponse>
 }

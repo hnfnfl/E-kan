@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ekan">
-        <activity android:name=".transaction.TransactionDetailActivity"></activity>
+        <activity android:name=".listUser.ListUserActivity"></activity>
+        <activity android:name=".transaction.TransactionDetailActivity" />
         <activity android:name=".settings.profile.ProfileActivity" />
         <activity android:name=".settings.SettingActivity" />
         <activity android:name=".auth.register.OTPActivity" />

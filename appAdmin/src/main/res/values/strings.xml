@@ -30,7 +30,7 @@
     <string name="settings">Setting</string>
     <string name="btn_edit_profile">tombol edit profil</string>
     <string name="btn_user_list">tombol daftar pengguna</string>
-    <string name="user_list">Daftar \nPengguna</string>
+    <string name="user_list">Daftar\nPengguna</string>
     <string name="btn_seller_list">tombol daftar penjual</string>
     <string name="seller_list">Daftar Penjual</string>
     <string name="btn_edit_user">tombol edit pengguna</string>
@@ -56,6 +56,12 @@
     <string name="detail_note">Catatan</string>
     <string name="detail_order_address">Alamat Pengantaran</string>
     <string name="transfer_evidence">Foto Bukti Transfer</string>
+    <string name="show_all">tampilkan semua</string>
+    <string name="pending">tertunda</string>
+    <string name="approved">disetujui</string>
+    <string name="rejected">ditolak</string>
+    <string name="canceled">dibatalkan</string>
+    <string name="list_user">Daftar Pengguna</string>
 
     <string-array name="transaction_status_filter">
         <item>tampilkan semua</item>
