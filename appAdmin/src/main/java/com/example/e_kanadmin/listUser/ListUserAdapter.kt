@@ -1,11 +1,15 @@
 package com.example.e_kanadmin.listUser
 
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.example.e_kanadmin.R
 import com.example.e_kanadmin.databinding.ItemListUserBinding
 import java.util.*
@@ -31,11 +35,28 @@ class ListUserAdapter : RecyclerView.Adapter<ListUserAdapter.UserItemHolder>(), 
                 tvUserEmail.text = listUserItem.email
                 Glide.with(itemView.context)
                     .load(listUserItem.foto_path)
+                    .transform(CenterCrop())
                     .placeholder(R.drawable.ic_profile)
                     .error(R.drawable.ic_profile)
                     .into(imgUser)
-                itemView.setOnClickListener {
 
+                if (listUserItem.status == "blocked") {
+                    visibility.visibility = View.VISIBLE
+                }
+
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, UserDetailActivity::class.java)
+                        .apply {
+                            putExtra(UserDetailActivity.iduser, listUserItem.iduser)
+                            putExtra(UserDetailActivity.nama, listUserItem.nama)
+                            putExtra(UserDetailActivity.alamat, listUserItem.alamat)
+                            putExtra(UserDetailActivity.email, listUserItem.email)
+                            putExtra(UserDetailActivity.nohp, listUserItem.nohp)
+                            putExtra(UserDetailActivity.status, listUserItem.status)
+                            putExtra(UserDetailActivity.foto_path, listUserItem.foto_path)
+                        }
+                    itemView.context.startActivity(intent)
+                    (itemView.context as Activity).finish()
                 }
             }
         }

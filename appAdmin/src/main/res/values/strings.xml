@@ -62,6 +62,22 @@
     <string name="rejected">ditolak</string>
     <string name="canceled">dibatalkan</string>
     <string name="list_user">Daftar Pengguna</string>
+    <string name="image_user">gambar user</string>
+    <string name="user_name">Nama</string>
+    <string name="user_email">Email Pengguna</string>
+    <string name="user_phone">Nomor HP</string>
+    <string name="user_address">Alamat Pengguna</string>
+    <string name="user_detail">Detail Pengguna</string>
+    <string name="user_blocked">Diblokir</string>
+    <string name="user_status">Status</string>
+    <string name="user_not_blocked">Tidak Terblokir</string>
+    <string name="image_rating">image rating</string>
+    <string name="list_seller">Daftar Penjual</string>
+    <string name="seller_detail">Detail Penjual</string>
+    <string name="seller_email">Email Penjual</string>
+    <string name="seller_shop">Nama Toko</string>
+    <string name="seller_address">Alamat Penjual</string>
+    <string name="seller_phone">Nomor HP</string>
 
     <string-array name="transaction_status_filter">
         <item>tampilkan semua</item>

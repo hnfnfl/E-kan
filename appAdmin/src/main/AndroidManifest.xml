@@ -18,7 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ekan">
-        <activity android:name=".listUser.ListUserActivity"></activity>
+        <activity android:name=".listSeller.SellerDetailActivity"></activity>
+        <activity android:name=".listSeller.ListSellerActivity" />
+        <activity android:name=".listUser.UserDetailActivity" />
+        <activity android:name=".listUser.ListUserActivity" />
         <activity android:name=".transaction.TransactionDetailActivity" />
         <activity android:name=".settings.profile.ProfileActivity" />
         <activity android:name=".settings.SettingActivity" />

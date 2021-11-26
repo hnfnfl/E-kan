@@ -3,6 +3,7 @@ package com.example.e_kanadmin.listUser
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,6 +42,18 @@ class ListUserActivity : AppCompatActivity() {
         val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
 
         listAllUser(tokenAuth)
+
+        listUserBinding.svUser.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(query: String?): Boolean {
+                listUserAdapter.filter.filter(query)
+                return true
+            }
+
+        })
     }
 
     override fun onBackPressed() {
@@ -60,7 +73,7 @@ class ListUserActivity : AppCompatActivity() {
                         listUserAdapter.setListUserItem(listUserSearch)
                         listUserAdapter.notifyDataSetChanged()
 
-                        with(listUserBinding.rvProductList) {
+                        with(listUserBinding.rvUserList) {
                             layoutManager = LinearLayoutManager(this@ListUserActivity)
                             itemAnimator = DefaultItemAnimator()
                             setHasFixedSize(true)

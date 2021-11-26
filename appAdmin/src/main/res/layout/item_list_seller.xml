@@ -16,7 +16,7 @@
         android:padding="12dp">
 
         <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/img_user"
+            android:id="@+id/img_seller"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
@@ -33,14 +33,14 @@
             android:gravity="center_vertical"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_user"
+            app:layout_constraintStart_toEndOf="@+id/img_seller"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tv_user_name"
+                android:id="@+id/tv_seller_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="4dp"
                 android:fontFamily="sans-serif-black"
                 android:text="Jamal"
                 android:textColor="@color/black"
@@ -48,12 +48,26 @@
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/tv_user_email"
+                android:id="@+id/tv_seller_shop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="jamal@gmail.com"
+                android:fontFamily="sans-serif-medium"
+                android:text="Jamal Shop"
                 android:textColor="@color/md_grey_700"
-                android:textSize="16sp"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_rating_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="3.5"
+                android:textColor="@color/md_amber_500"
+                android:textSize="18sp"
+                app:drawableEndCompat="@drawable/ic_star_rating"
+                android:drawablePadding="4dp"
                 tools:ignore="HardcodedText" />
 
         </LinearLayout>

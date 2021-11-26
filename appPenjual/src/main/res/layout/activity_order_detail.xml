@@ -236,7 +236,7 @@
                 app:p_bgColor="@color/colorSecondary"
                 app:p_cornerRadius="5dp"
                 app:p_layoutDirection="ltr"
-                app:p_progressBGColor="@color/white"
+                app:p_progressBGColor="@color/primaryBackgroundColor"
                 app:p_progressColor="@color/primaryColor"
                 app:p_rippleColor="@color/primaryLightColor"
                 app:p_strokeColor="@color/primaryColor"

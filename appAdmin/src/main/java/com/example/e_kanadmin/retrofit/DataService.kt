@@ -43,9 +43,27 @@ interface DataService {
         @Header("Authorization") token: String
     ): Call<UserResponse>
 
-    //get semua seller
+    //get semua penjual
     @POST("admin/main_admin/getAllSeller")
     fun getAllSeller(
         @Header("Authorization") token: String
     ): Call<SellerResponse>
+
+    //edit status user
+    @FormUrlEncoded
+    @POST("admin/main_admin/editStatusUser")
+    fun editStatusUser(
+        @Field("iduser") iduser: String,
+        @Field("status") status: String,
+        @Header("Authorization") token: String
+    ): Call<DefaultResponse>
+
+    //edit status penjual
+    @FormUrlEncoded
+    @POST("admin/main_admin/editStatusSeller")
+    fun editStatusSeller(
+        @Field("idpenjual") idpenjual: String,
+        @Field("status") status: String,
+        @Header("Authorization") token: String
+    ): Call<DefaultResponse>
 }

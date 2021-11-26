@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".listSeller.SellerDetailActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:contentDescription="@string/btn_back"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/seller_detail"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="38dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="32dp">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/img_seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/image_user"
+                android:src="@drawable/avatar_default"
+                app:riv_corner_radius="8dp" />
+
+            <TextView
+                android:id="@+id/tv_detail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Nama"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="64dp"
+                android:background="@drawable/bg_list_product"
+                android:backgroundTint="@color/md_blue_grey_100"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_status" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/seller_shop"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_seller_shop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/md_grey_200"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/seller_email"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_seller_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/md_grey_200"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/seller_phone"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_seller_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/md_grey_200"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/seller_address"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_seller_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/md_grey_200"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="" />
+
+            <com.chand.progressbutton.ProgressButton
+                android:id="@+id/btn_show_seller"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:p_arrowVisible="false"
+                app:p_backgroundTint="@color/primaryColor"
+                app:p_bgColor="@color/colorSecondary"
+                app:p_cornerRadius="5dp"
+                app:p_icon="@drawable/ic_user"
+                app:p_iconGravity="textStart"
+                app:p_iconPadding="6dp"
+                app:p_layoutDirection="ltr"
+                app:p_progressBGColor="@color/primaryColor"
+                app:p_progressColor="@color/primaryLightColor"
+                app:p_rippleColor="@color/primaryLightColor"
+                app:p_style="circleBar"
+                app:p_text="Buka Blokir Pengguna"
+                app:p_textColor="@color/white"
+                app:p_textSize="18sp" />
+
+            <com.chand.progressbutton.ProgressButton
+                android:id="@+id/btn_block_seller"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                app:p_arrowVisible="false"
+                app:p_backgroundTint="@color/md_red_500"
+                app:p_bgColor="@color/md_red_400"
+                app:p_cornerRadius="5dp"
+                app:p_icon="@drawable/ic_blocked"
+                app:p_iconGravity="textStart"
+                app:p_iconSize="36dp"
+                app:p_layoutDirection="ltr"
+                app:p_progressBGColor="@color/md_red_500"
+                app:p_progressColor="@color/md_red_A200"
+                app:p_rippleColor="@color/primaryLightColor"
+                app:p_style="circleBar"
+                app:p_text="Blokir Pengguna"
+                app:p_textColor="@color/white"
+                app:p_textSize="18sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_kanadmin.databinding.ActivityMainBinding
+import com.example.e_kanadmin.listSeller.ListSellerActivity
 import com.example.e_kanadmin.listUser.ListUserActivity
 import com.example.e_kanadmin.retrofit.AuthService
 import com.example.e_kanadmin.retrofit.DataService
@@ -61,6 +62,11 @@ class MainActivity : AppCompatActivity() {
 
         mainBinding.llListUser.setOnClickListener {
             startActivity(Intent(this@MainActivity, ListUserActivity::class.java))
+            finish()
+        }
+
+        mainBinding.llListSeller.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ListSellerActivity::class.java))
             finish()
         }
 

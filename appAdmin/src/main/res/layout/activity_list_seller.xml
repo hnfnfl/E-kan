@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".listUser.ListUserActivity">
+    tools:context=".listSeller.ListSellerActivity">
 
     <LinearLayout
         android:id="@+id/ll_header"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="@string/list_user"
+            android:text="@string/list_seller"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
@@ -45,7 +45,7 @@
         android:background="@drawable/bg_list_product"
         android:iconifiedByDefault="false"
         android:padding="8dp"
-        android:queryHint="cari pengguna"
+        android:queryHint="cari penjual"
         app:layout_constraintBottom_toTopOf="@+id/ll_list_user"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,10 +63,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_user_list"
+            android:id="@+id/rv_seller_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_list_user" />
+            tools:listitem="@layout/item_list_seller" />
 
     </LinearLayout>
 
@@ -81,6 +81,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/ll_list_user" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
