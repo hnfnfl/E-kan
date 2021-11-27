@@ -78,6 +78,10 @@
     <string name="seller_shop">Nama Toko</string>
     <string name="seller_address">Alamat Penjual</string>
     <string name="seller_phone">Nomor HP</string>
+    <string name="btn_product_list">tombol daftar produk</string>
+    <string name="product_list">Daftar Produk</string>
+    <string name="list_product">Daftar Produk</string>
+    <string name="product_hidden">produk disembunyikan</string>
 
     <string-array name="transaction_status_filter">
         <item>tampilkan semua</item>

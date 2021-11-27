@@ -1,9 +1,6 @@
 package com.example.e_kanadmin.retrofit
 
-import com.example.e_kanadmin.retrofit.response.DefaultResponse
-import com.example.e_kanadmin.retrofit.response.SellerResponse
-import com.example.e_kanadmin.retrofit.response.TransactionResponse
-import com.example.e_kanadmin.retrofit.response.UserResponse
+import com.example.e_kanadmin.retrofit.response.*
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -48,6 +45,12 @@ interface DataService {
     fun getAllSeller(
         @Header("Authorization") token: String
     ): Call<SellerResponse>
+
+    //get semua produk
+    @POST("admin/main_admin/getAllProduct")
+    fun getAllProduct(
+        @Header("Authorization") token: String
+    ): Call<ProductResponse>
 
     //edit status user
     @FormUrlEncoded

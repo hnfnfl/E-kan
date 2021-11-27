@@ -157,6 +157,43 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_list_product"
+                        android:layout_width="140dp"
+                        android:layout_height="80dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/menu_box"
+                        android:backgroundTint="@color/md_indigo_100"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/menu_box"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/btn_product_list"
+                                android:src="@drawable/ic_fish"
+                                app:tint="@color/md_indigo_900" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="63dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@string/product_list"
+                            android:textColor="@color/md_indigo_900"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:id="@+id/ll_setting"
                         android:layout_width="140dp"
                         android:layout_height="80dp"

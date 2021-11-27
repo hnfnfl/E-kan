@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".listUser.ListUserActivity">
+    tools:context=".listProduct.ListProductActivity">
 
     <LinearLayout
         android:id="@+id/ll_header"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="@string/list_user"
+            android:text="@string/list_product"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
@@ -45,14 +45,14 @@
         android:background="@drawable/bg_list_product"
         android:iconifiedByDefault="false"
         android:padding="8dp"
-        android:queryHint="cari pengguna"
-        app:layout_constraintBottom_toTopOf="@+id/ll_list_user"
+        android:queryHint="cari produk"
+        app:layout_constraintBottom_toTopOf="@+id/ll_list_product"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_header" />
 
     <LinearLayout
-        android:id="@+id/ll_list_user"
+        android:id="@+id/ll_list_product"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="130dp"
@@ -66,7 +66,7 @@
             android:id="@+id/rv_user_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_list_user" />
+            tools:listitem="@layout/item_list_product" />
 
     </LinearLayout>
 
@@ -80,6 +80,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/ll_list_user" />
+        app:layout_constraintTop_toTopOf="@id/ll_list_product" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

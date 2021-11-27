@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ekan">
-        <activity android:name=".listSeller.SellerDetailActivity"></activity>
+        <activity android:name=".listProduct.ListProductActivity"></activity>
+        <activity android:name=".listSeller.SellerDetailActivity" />
         <activity android:name=".listSeller.ListSellerActivity" />
         <activity android:name=".listUser.UserDetailActivity" />
         <activity android:name=".listUser.ListUserActivity" />

@@ -2,15 +2,14 @@ package com.example.e_kanadmin
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e_kanadmin.databinding.ActivityMainBinding
+import com.example.e_kanadmin.listProduct.ListProductActivity
 import com.example.e_kanadmin.listSeller.ListSellerActivity
 import com.example.e_kanadmin.listUser.ListUserActivity
 import com.example.e_kanadmin.retrofit.AuthService
@@ -67,6 +66,11 @@ class MainActivity : AppCompatActivity() {
 
         mainBinding.llListSeller.setOnClickListener {
             startActivity(Intent(this@MainActivity, ListSellerActivity::class.java))
+            finish()
+        }
+
+        mainBinding.llListProduct.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ListProductActivity::class.java))
             finish()
         }
 
