@@ -89,6 +89,9 @@
     <string name="product_detail_price">Harga Produk</string>
     <string name="product_detail_desc">Keterangan Produk</string>
 
+    <string name="token_auth">Bearer %1$s</string>
+    <string name="success">success</string>
+
     <string-array name="transaction_status_filter">
         <item>tampilkan semua</item>
         <item>tertunda</item>

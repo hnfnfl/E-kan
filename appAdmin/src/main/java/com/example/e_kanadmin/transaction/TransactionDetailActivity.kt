@@ -58,7 +58,7 @@ class TransactionDetailActivity : AppCompatActivity() {
         val fotoPath = intent.getStringExtra(fotoPath).toString()
         val status = intent.getStringExtra(status).toString()
         val transaksi = intent.getStringExtra(transaksi).toString()
-        val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
+        val tokenAuth = getString(R.string.token_auth, myPreferences.getValue(Constants.TokenAuth).toString())
 
         transactionDetailBinding.btnBack.setOnClickListener {
             onBackPressed()
@@ -119,7 +119,7 @@ class TransactionDetailActivity : AppCompatActivity() {
 
     private fun editStatus(idpenjual: String, transaksi: String, tokenAuth: String) {
         val service = RetrofitClient().apiRequest().create(DataService::class.java)
-        service.editStatus(idpenjual, transaksi, "Bearer $tokenAuth").enqueue(object : Callback<DefaultResponse> {
+        service.editStatus(idpenjual, transaksi, tokenAuth).enqueue(object : Callback<DefaultResponse> {
             override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
                 if (response.isSuccessful) {
                     if (response.body()!!.status == "success") {

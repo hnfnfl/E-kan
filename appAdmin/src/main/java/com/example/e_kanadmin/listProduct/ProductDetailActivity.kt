@@ -1,16 +1,14 @@
 package com.example.e_kanadmin.listProduct
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
 import com.example.e_kanadmin.R
 import com.example.e_kanadmin.databinding.ActivityProductDetailBinding
-import com.example.e_kanadmin.listSeller.ListSellerActivity
-import com.example.e_kanadmin.listSeller.SellerDetailActivity
 import com.example.e_kanadmin.retrofit.DataService
 import com.example.e_kanadmin.retrofit.RetrofitClient
 import com.example.e_kanadmin.retrofit.response.DefaultResponse
@@ -50,7 +48,7 @@ class ProductDetailActivity : AppCompatActivity() {
         val harga = intent.getStringExtra(harga).toString()
         val status = intent.getStringExtra(statusProduk).toString()
         val fotoPath = intent.getStringExtra(foto_path).toString()
-        val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
+        val tokenAuth = getString(R.string.token_auth, myPreferences.getValue(Constants.TokenAuth).toString())
 
         productDetailBinding.tvDetailName.text = namaProduk
         productDetailBinding.tvSellerShop.text = namaToko
@@ -97,10 +95,10 @@ class ProductDetailActivity : AppCompatActivity() {
 
     private fun editStatusProduct(idproduk: String, status: String, tokenAuth: String) {
         val service = RetrofitClient().apiRequest().create(DataService::class.java)
-        service.editStatusProduct(idproduk, status, "Bearer $tokenAuth").enqueue(object : Callback<DefaultResponse> {
+        service.editStatusProduct(idproduk, status, tokenAuth).enqueue(object : Callback<DefaultResponse> {
             override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
                 if (response.isSuccessful) {
-                    if (response.body()!!.status == "success") {
+                    if (response.body()!!.status == getString(R.string.success)) {
                         startActivity(Intent(this@ProductDetailActivity, ListProductActivity::class.java))
                         finish()
                     }

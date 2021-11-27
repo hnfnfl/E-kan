@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         transactionAdapter = TransactionListAdapter()
 
         val iadmin = myPreferences.getValue(Constants.USER_ID).toString()
-        val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
+        val tokenAuth = getString(R.string.token_auth, myPreferences.getValue(Constants.TokenAuth).toString())
 
         mainBinding.btnProfile.setOnClickListener {
             startActivity(Intent(this@MainActivity, ProfileActivity::class.java))
@@ -181,7 +181,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun listTransaction(tokenAuth: String) {
         val service = RetrofitClient().apiRequest().create(DataService::class.java)
-        service.getTransaction("Bearer $tokenAuth").enqueue(object : Callback<TransactionResponse> {
+        service.getTransaction(tokenAuth).enqueue(object : Callback<TransactionResponse> {
             override fun onResponse(call: Call<TransactionResponse>, response: Response<TransactionResponse>) {
                 if (response.isSuccessful) {
                     if (response.body()!!.status == "success") {

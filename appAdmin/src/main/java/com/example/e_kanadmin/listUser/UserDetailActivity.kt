@@ -49,7 +49,7 @@ class UserDetailActivity : AppCompatActivity() {
         val nohp = intent.getStringExtra(nohp).toString()
         val status = intent.getStringExtra(status).toString()
         val fotoPath = intent.getStringExtra(foto_path).toString()
-        val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
+        val tokenAuth = getString(R.string.token_auth, myPreferences.getValue(Constants.TokenAuth).toString())
 
         userDetailBinding.tvDetailName.text = nama
         userDetailBinding.tvUserAddress.text = alamat
@@ -93,7 +93,7 @@ class UserDetailActivity : AppCompatActivity() {
 
     private fun editStatusUser(iduser: String, status: String, tokenAuth: String) {
         val service = RetrofitClient().apiRequest().create(DataService::class.java)
-        service.editStatusUser(iduser, status, "Bearer $tokenAuth").enqueue(object : Callback<DefaultResponse> {
+        service.editStatusUser(iduser, status, tokenAuth).enqueue(object : Callback<DefaultResponse> {
             override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
                 if (response.isSuccessful) {
                     if (response.body()!!.status == "success") {

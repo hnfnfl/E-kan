@@ -52,7 +52,7 @@ class SellerDetailActivity : AppCompatActivity() {
         val nohpPenjual = intent.getStringExtra(nohp_penjual).toString()
         val status = intent.getStringExtra(statusPenjual).toString()
         val fotoPath = intent.getStringExtra(foto_path).toString()
-        val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
+        val tokenAuth = getString(R.string.token_auth, myPreferences.getValue(Constants.TokenAuth).toString())
 
         sellerDetailBinding.tvDetailName.text = namaPenjual
         sellerDetailBinding.tvSellerShop.text = namaToko
@@ -98,7 +98,7 @@ class SellerDetailActivity : AppCompatActivity() {
 
     private fun editStatusSeller(idpenjual: String, status: String, tokenAuth: String) {
         val service = RetrofitClient().apiRequest().create(DataService::class.java)
-        service.editStatusSeller(idpenjual, status, "Bearer $tokenAuth").enqueue(object : Callback<DefaultResponse> {
+        service.editStatusSeller(idpenjual, status, tokenAuth).enqueue(object : Callback<DefaultResponse> {
             override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
                 if (response.isSuccessful) {
                     if (response.body()!!.status == "success") {

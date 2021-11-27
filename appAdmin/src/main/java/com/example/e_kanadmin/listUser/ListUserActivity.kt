@@ -39,7 +39,7 @@ class ListUserActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
+        val tokenAuth = getString(R.string.token_auth, myPreferences.getValue(Constants.TokenAuth).toString())
 
         listAllUser(tokenAuth)
 
@@ -63,7 +63,7 @@ class ListUserActivity : AppCompatActivity() {
 
     private fun listAllUser(tokenAuth: String) {
         val service = RetrofitClient().apiRequest().create(DataService::class.java)
-        service.getAllUser("Bearer $tokenAuth").enqueue(object : Callback<UserResponse> {
+        service.getAllUser(tokenAuth).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {
                     if (response.body()!!.status == "success") {

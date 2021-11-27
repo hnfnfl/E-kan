@@ -39,7 +39,7 @@ class ListProductActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
+        val tokenAuth = getString(R.string.token_auth, myPreferences.getValue(Constants.TokenAuth).toString())
 
         getAllProduct(tokenAuth)
 
@@ -63,7 +63,7 @@ class ListProductActivity : AppCompatActivity() {
 
     private fun getAllProduct(tokenAuth: String) {
         val service = RetrofitClient().apiRequest().create(DataService::class.java)
-        service.getAllProduct("Bearer $tokenAuth").enqueue(object : Callback<ProductResponse> {
+        service.getAllProduct(tokenAuth).enqueue(object : Callback<ProductResponse> {
             override fun onResponse(call: Call<ProductResponse>, response: Response<ProductResponse>) {
                 if (response.isSuccessful) {
                     if (response.body()!!.status == "success") {

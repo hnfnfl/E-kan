@@ -107,7 +107,7 @@ class ProfileActivity : AppCompatActivity() {
                     .toRequestBody(MultipartBody.FORM)
                 val adminPhone = profileBinding.tvValuePhoneEdit.text.toString()
                     .toRequestBody(MultipartBody.FORM)
-                val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
+                val tokenAuth = getString(R.string.token_auth, myPreferences.getValue(Constants.TokenAuth).toString())
                 var photo: MultipartBody.Part? = null
 
                 photoUri?.let {
@@ -117,38 +117,30 @@ class ProfileActivity : AppCompatActivity() {
                 }
 
                 val service = RetrofitClient().apiRequest().create(DataService::class.java)
-                service.editProfile(
-                    idadmin,
-                    adminName,
-                    adminEmail,
-                    adminPhone,
-                    photo,
-                    "Bearer $tokenAuth"
-                )
-                    .enqueue(object : Callback<DefaultResponse> {
-                        override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
-                            if (response.isSuccessful) {
-                                if (response.body()!!.status == "success") {
-                                    myPreferences.setValue(Constants.USER_NAMA, profileBinding.tvValueNameEdit.text.toString())
-                                    myPreferences.setValue(Constants.USER_EMAIL, profileBinding.tvValueEmailEdit.text.toString())
-                                    myPreferences.setValue(Constants.USER_NOHP, profileBinding.tvValuePhoneEdit.text.toString())
-                                    val idAdmin = myPreferences.getValue(Constants.USER_ID).toString()
-                                    getUserFoto(idAdmin)
-                                } else {
-                                    profileBinding.btnSave.endAnimation()
-                                    Toasty.error(this@ProfileActivity, response.message(), Toasty.LENGTH_LONG).show()
-                                }
+                service.editProfile(idadmin, adminName, adminEmail, adminPhone, photo, tokenAuth).enqueue(object : Callback<DefaultResponse> {
+                    override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
+                        if (response.isSuccessful) {
+                            if (response.body()!!.status == "success") {
+                                myPreferences.setValue(Constants.USER_NAMA, profileBinding.tvValueNameEdit.text.toString())
+                                myPreferences.setValue(Constants.USER_EMAIL, profileBinding.tvValueEmailEdit.text.toString())
+                                myPreferences.setValue(Constants.USER_NOHP, profileBinding.tvValuePhoneEdit.text.toString())
+                                val idAdmin = myPreferences.getValue(Constants.USER_ID).toString()
+                                getUserFoto(idAdmin)
                             } else {
+                                profileBinding.btnSave.endAnimation()
                                 Toasty.error(this@ProfileActivity, response.message(), Toasty.LENGTH_LONG).show()
                             }
+                        } else {
+                            Toasty.error(this@ProfileActivity, response.message(), Toasty.LENGTH_LONG).show()
                         }
+                    }
 
-                        override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                            profileBinding.btnSave.endAnimation()
-                            Toasty.error(this@ProfileActivity, t.message.toString(), Toasty.LENGTH_LONG).show()
-                        }
+                    override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                        profileBinding.btnSave.endAnimation()
+                        Toasty.error(this@ProfileActivity, t.message.toString(), Toasty.LENGTH_LONG).show()
+                    }
 
-                    })
+                })
             }
         }
     }
