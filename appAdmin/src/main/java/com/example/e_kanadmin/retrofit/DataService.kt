@@ -69,4 +69,13 @@ interface DataService {
         @Field("status") status: String,
         @Header("Authorization") token: String
     ): Call<DefaultResponse>
+
+    //edit status produk
+    @FormUrlEncoded
+    @POST("admin/main_admin/editStatusProduct")
+    fun editStatusProduct(
+        @Field("idproduk") idproduk: String,
+        @Field("status") status: String,
+        @Header("Authorization") token: String
+    ): Call<DefaultResponse>
 }

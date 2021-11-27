@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    tools:context=".listUser.UserDetailActivity">
+    tools:context=".listProduct.ProductDetailActivity">
 
     <LinearLayout
         android:id="@+id/ll_header"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="@string/user_detail"
+            android:text="@string/product_detail"
             android:textColor="@color/black"
             android:textSize="18sp" />
 
@@ -52,12 +52,12 @@
             android:paddingBottom="32dp">
 
             <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/img_user"
+                android:id="@+id/img_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="8dp"
-                android:contentDescription="@string/image_user"
+                android:contentDescription="@string/image_product"
                 android:src="@drawable/avatar_default"
                 app:riv_corner_radius="8dp" />
 
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="Nama"
+                android:text="Nama Produk"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -75,7 +75,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="64dp"
+                android:layout_marginHorizontal="52dp"
                 android:background="@drawable/bg_list_product"
                 android:backgroundTint="@color/md_blue_grey_100"
                 android:gravity="center"
@@ -104,12 +104,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/user_email"
+                android:text="@string/seller_shop"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tv_user_email"
+                android:id="@+id/tv_seller_shop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -122,12 +122,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/user_phone"
+                android:text="@string/product_detail_price"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tv_user_phone"
+                android:id="@+id/tv_product_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -140,12 +140,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/user_address"
+                android:text="@string/product_detail_desc"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tv_user_address"
+                android:id="@+id/tv_product_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -155,7 +155,7 @@
                 android:text="" />
 
             <com.chand.progressbutton.ProgressButton
-                android:id="@+id/btn_show_user"
+                android:id="@+id/btn_show_product"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="16dp"
@@ -164,7 +164,7 @@
                 app:p_backgroundTint="@color/primaryColor"
                 app:p_bgColor="@color/colorSecondary"
                 app:p_cornerRadius="5dp"
-                app:p_icon="@drawable/ic_user"
+                app:p_icon="@drawable/ic_visible"
                 app:p_iconGravity="textStart"
                 app:p_iconPadding="6dp"
                 app:p_layoutDirection="ltr"
@@ -172,12 +172,12 @@
                 app:p_progressColor="@color/primaryLightColor"
                 app:p_rippleColor="@color/primaryLightColor"
                 app:p_style="circleBar"
-                app:p_text="Buka Blokir Pengguna"
+                app:p_text="Tampilkan Produk"
                 app:p_textColor="@color/white"
                 app:p_textSize="18sp" />
 
             <com.chand.progressbutton.ProgressButton
-                android:id="@+id/btn_block_user"
+                android:id="@+id/btn_hide_product"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="8dp"
@@ -186,15 +186,15 @@
                 app:p_backgroundTint="@color/md_red_500"
                 app:p_bgColor="@color/md_red_400"
                 app:p_cornerRadius="5dp"
-                app:p_icon="@drawable/ic_blocked"
+                app:p_icon="@drawable/ic_invisible"
                 app:p_iconGravity="textStart"
-                app:p_iconSize="36dp"
+                app:p_iconPadding="6dp"
                 app:p_layoutDirection="ltr"
                 app:p_progressBGColor="@color/md_red_500"
                 app:p_progressColor="@color/md_red_A200"
                 app:p_rippleColor="@color/primaryLightColor"
                 app:p_style="circleBar"
-                app:p_text="Blokir Pengguna"
+                app:p_text="Sembunyikan Produk"
                 app:p_textColor="@color/white"
                 app:p_textSize="18sp" />
 

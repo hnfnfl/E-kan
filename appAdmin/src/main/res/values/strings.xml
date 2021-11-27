@@ -81,7 +81,13 @@
     <string name="btn_product_list">tombol daftar produk</string>
     <string name="product_list">Daftar Produk</string>
     <string name="list_product">Daftar Produk</string>
-    <string name="product_hidden">produk disembunyikan</string>
+    <string name="product_show">Produk Ditampilkan</string>
+    <string name="product_hidden">Produk Disembunyikan</string>
+    <string name="product_price">Rp %1$s</string>
+    <string name="product_detail">Detail Produk</string>
+    <string name="image_product">gambar produk</string>
+    <string name="product_detail_price">Harga Produk</string>
+    <string name="product_detail_desc">Keterangan Produk</string>
 
     <string-array name="transaction_status_filter">
         <item>tampilkan semua</item>
