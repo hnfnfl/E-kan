@@ -47,29 +47,35 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainBinding.root)
 
         myPreferences = MySharedPreferences(this@MainActivity)
+        listTopFiveAdapter = ListTopFiveProductAdapter()
 
         mainBinding.llProduct.setOnClickListener {
             startActivity(Intent(this@MainActivity, ListProductActivity::class.java))
+            finish()
         }
 
         mainBinding.llOrderHistory.setOnClickListener {
             startActivity(Intent(this@MainActivity, OrderListActivity::class.java))
+            finish()
         }
 
         mainBinding.llSetting.setOnClickListener {
             startActivity(Intent(this@MainActivity, SettingActivity::class.java))
+            finish()
         }
 
         mainBinding.btnProfile.setOnClickListener {
             startActivity(Intent(this@MainActivity, ProfileActivity::class.java))
+            finish()
         }
 
         mainBinding.btnNotif.setOnClickListener {
             startActivity(Intent(this@MainActivity, NotificationActivity::class.java))
+            finish()
         }
 
         val idpenjual = myPreferences.getValue(Constants.USER_ID).toString()
-        val tokenAuth = myPreferences.getValue(Constants.TokenAuth).toString()
+        val tokenAuth = getString(R.string.token_auth, myPreferences.getValue(Constants.TokenAuth).toString())
 
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
@@ -91,8 +97,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-        listTopFiveAdapter = ListTopFiveProductAdapter()
         listTopFiveProduct(idpenjual, tokenAuth)
     }
 
@@ -117,8 +121,9 @@ class MainActivity : AppCompatActivity() {
         service.refreshAuthToken(idpenjual).enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
-                    if (response.body()!!.status == "success") {
-                        myPreferences.setValue(Constants.TokenAuth, response.body()!!.tokenAuth)
+                    myPreferences.setValue(Constants.TokenAuth, response.body()!!.tokenAuth)
+                    if (response.body()!!.status == "blocked") {
+                        mainBinding.llBlockedWarning.visibility = View.VISIBLE
                     }
                 }
             }
@@ -131,7 +136,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun listTopFiveProduct(idpenjual: String, tokenAuth: String) {
         val service = RetrofitClient().apiRequest().create(DataService::class.java)
-        service.getTopFiveProduct(idpenjual, "Bearer $tokenAuth").enqueue(object : Callback<ProductResponse> {
+        service.getTopFiveProduct(idpenjual, tokenAuth).enqueue(object : Callback<ProductResponse> {
             override fun onResponse(call: Call<ProductResponse>, response: Response<ProductResponse>) {
                 if (response.isSuccessful) {
                     if (response.body()!!.status == "success") {
@@ -159,7 +164,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getTimeChart(idpenjual: String, time: String, tokenAuth: String) {
         val service = RetrofitClient().apiRequest().create(DataService::class.java)
-        service.getTimeChart(idpenjual, time, "Bearer $tokenAuth").enqueue(object : Callback<ChartResponse> {
+        service.getTimeChart(idpenjual, time, tokenAuth).enqueue(object : Callback<ChartResponse> {
             override fun onResponse(call: Call<ChartResponse>, response: Response<ChartResponse>) {
                 if (response.isSuccessful) {
                     if (response.body()!!.status == "success") {

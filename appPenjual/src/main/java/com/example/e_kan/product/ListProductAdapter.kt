@@ -2,7 +2,9 @@ package com.example.e_kan.product
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
@@ -36,6 +38,15 @@ class ListProductAdapter : RecyclerView.Adapter<ListProductAdapter.ProductItemHo
                 tvFishWeight.text = itemView.context.getString(R.string.fish_weight, listProductItem.berat)
                 tvFishStock.text = listProductItem.stok
                 tvFishSold.text = listProductItem.terjual
+                Glide.with(itemView.context)
+                    .load(listProductItem.foto_path)
+                    .placeholder(R.drawable.ic_fish)
+                    .error(R.drawable.ic_fish)
+                    .into(imgFish)
+                Log.e("status = ", listProductItem.status)
+                if (listProductItem.status == "hidden") {
+                    visibility.visibility = View.VISIBLE
+                }
                 btnEditProduct.setOnClickListener {
                     val intent = Intent(itemView.context, EditProductActivity::class.java)
                         .apply {
@@ -50,11 +61,6 @@ class ListProductAdapter : RecyclerView.Adapter<ListProductAdapter.ProductItemHo
                     itemView.context.startActivity(intent)
                     (itemView.context as Activity).finish()
                 }
-                Glide.with(itemView.context)
-                    .load(listProductItem.foto_path)
-                    .placeholder(R.drawable.ic_fish)
-                    .error(R.drawable.ic_fish)
-                    .into(imgFish)
             }
         }
 

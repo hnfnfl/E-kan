@@ -75,6 +75,10 @@
     <string name="last_month">1 Bulan terakhir</string>
     <string name="last_year">1 Tahun terakhir</string>
     <string name="img_empty">image empty</string>
+
+    <string name="token_auth">Bearer %1$s</string>
+    <string name="product_hidden">produk disembunyikan</string>
+
     <string-array name="status_filter">
         <item>tampilkan semua</item>
         <item>belum diproses</item>

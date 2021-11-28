@@ -9,6 +9,7 @@ class ProductEntity(
     var berat: String = "",
     var stok: String = "",
     var terjual: String = "",
+    var status: String = "",
     var foto_name: String = "",
     var foto_path: String = "",
     )

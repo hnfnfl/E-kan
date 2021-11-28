@@ -201,7 +201,7 @@ class MainActivity : AppCompatActivity() {
                         Toasty.error(this@MainActivity, response.message(), Toasty.LENGTH_LONG).show()
                     }
                 } else {
-                    Toasty.error(this@MainActivity, response.message(), Toasty.LENGTH_LONG).show()
+                    Toasty.error(this@MainActivity, "Mohon tutup aplikasi dan buka kembali", Toasty.LENGTH_LONG).show()
                 }
             }
 
